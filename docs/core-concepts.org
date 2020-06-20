@@ -1,0 +1,30 @@
+* Concepts
+
+  The following high-level concepts are considered within the domain of the Gift
+  App.
+
+** Gift
+   - Collection of user-generated media / text (created at a museum)
+   - Created with the intention of "giving" to others
+   - Immutable structure
+   - Always associated with a particular museum
+   - Associated with a unique url
+
+** Giving
+   - Accomplished by distributing the unique url associated with a gift
+   - Shared via:
+     - Email
+     - SMS
+     - WhatsApp (mobile deep link)
+     - Facebook Messenger (mobile deep link)
+
+** Receiving
+   - Obtain a unique url for a gift and visit the link in a browser
+
+** Museum
+   - Place where gifts can be created (and optionally received)
+   - Used to make creation / receiving experience specific to museum
+   - Unique branding / content
+   - Associated urls / subdomains
+   - Identified during creation via url / subdomain / ip / location / user-choice
+   - Identified during receiving via gift content

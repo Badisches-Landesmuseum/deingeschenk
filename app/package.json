@@ -1,0 +1,51 @@
+{
+  "name": "gift-app",
+  "version": "0.1.1",
+  "repository": "git@gitlab.com:blasttheory/gift.git",
+  "author": "Michael Kane <michael@blasttheory.co.uk>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@types/dom-mediacapture-record": "^1.0.1",
+    "@types/react": "^16.8.13",
+    "@types/react-dom": "^16.8.4",
+    "@types/react-router-dom": "^4.3.2",
+    "@types/styled-components": "4.1.8",
+    "@types/uuid": "^3.4.4",
+    "ajv": "^6.10.0",
+    "audio-recorder-polyfill": "^0.1.6",
+    "core-js": "^3.0.1",
+    "history": "^4.9.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.0",
+    "styled-components": "^4.2.0",
+    "use-react-router": "^1.0.5",
+    "uuid": "^3.3.2"
+  },
+  "scripts": {
+    "typecheck": "yarn tsc",
+    "lint": "yarn tslint --project ./tsconfig.json --format verbose",
+    "start-app": "yarn cleanup; yarn parcel ./src/index.html -p 8000",
+    "start-storybook": "start-storybook -p 9000 -s public",
+    "build-app": "yarn cleanup; yarn parcel build ./src/index.html",
+    "build-storybook": "build-storybook -s public",
+    "cleanup": "rm -rf .cache dist"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@storybook/react": "^5.0.7",
+    "@types/storybook__react": "^4.0.1",
+    "babel-loader": "^8.0.5",
+    "parcel-bundler": "^1.12.3",
+    "tslint": "^5.16.0",
+    "tslint-react": "^4.0.0",
+    "typescript": "^3.5.1"
+  }
+}

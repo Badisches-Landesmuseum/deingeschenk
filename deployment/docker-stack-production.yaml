@@ -1,0 +1,95 @@
+version: '3.7'
+
+services:
+  proxy:
+    image: traefik:1.7
+    command: --api \
+      --docker \
+      --docker.swarmmode \
+      --docker.watch \
+      --logLevel=DEBUG
+    ports:
+      - '80:80'
+      - '443:443'
+      - '8080:8080'
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+      - './traefik.toml:/traefik.toml'
+      - 'proxy-data:/data'
+
+  # Currently redirecting to project page
+  app:
+    image: registry.gitlab.com/blasttheory/gift/gift-app:latest-production
+    volumes:
+      - './nginx-app.conf:/etc/nginx/nginx.conf'
+    deploy:
+      replicas: 2
+      labels:
+        - 'traefik.enable=true'
+        - 'traefik.port=80'
+        - 'traefik.domain=thegift.app'
+        - 'traefik.frontend.rule=Host:thegift.app,www.thegift.app'
+        - 'traefik.frontend.redirect.regex=.*'
+        - 'traefik.frontend.redirect.replacement=https://www.blasttheory.co.uk/projects/gift/'
+
+  app-demo:
+    image: registry.gitlab.com/blasttheory/gift/gift-app:latest-production
+    volumes:
+      - './nginx-app.conf:/etc/nginx/nginx.conf'
+    deploy:
+      replicas: 2
+      labels:
+        - 'traefik.enable=true'
+        - 'traefik.port=80'
+        - 'traefik.domain=demo.thegift.app'
+        - 'traefik.frontend.rule=Host:demo.thegift.app'
+
+  # Currently redirecting to project page (existing gifts still accessible)
+  app-munch:
+    image: registry.gitlab.com/blasttheory/gift/gift-app:latest-production
+    volumes:
+      - './nginx-app.conf:/etc/nginx/nginx.conf'
+    deploy:
+      replicas: 2
+      labels:
+        - 'traefik.enable=true'
+        - 'traefik.port=80'
+        - 'traefik.domain=munchgift.com'
+        - 'traefik.redirect_homepage.frontend.rule=Host:munchgift.com; Path:/'
+        - 'traefik.redirect_homepage.frontend.redirect.regex=.*'
+        - 'traefik.redirect_homepage.frontend.redirect.replacement=https://www.blasttheory.co.uk/projects/gift/'
+        - 'traefik.allow_others.frontend.rule=Host:munchgift.com'
+
+  app-mpu:
+    image: registry.gitlab.com/blasttheory/gift/gift-app:latest-production
+    volumes:
+      - './nginx-app.conf:/etc/nginx/nginx.conf'
+    deploy:
+      replicas: 2
+      labels:
+        - 'traefik.enable=true'
+        - 'traefik.port=80'
+        - 'traefik.domain=mpu.thegift.app'
+        - 'traefik.frontend.rule=Host:mpu.thegift.app'
+
+  api:
+    image: registry.gitlab.com/blasttheory/gift/gift-api:latest
+    environment:
+      ENVIRONMENT: 'production'
+      DEBUG: '(INFO|WARN|ERROR):*'
+      SQL_URI: 'postgresql://gift:gift@db/gift'
+      CORS_ALLOWED_ORIGINS: 'https://thegift.app, https://demo.thegift.app, https://munchgift.com, https://mpu.thegift.app'
+      AWS_ACCESS_KEY: 'some-access-key'
+      AWS_SECRET_ACCESS_KEY: 'some-secret-key'
+      AWS_BUCKET: 'bt-gift'
+      AWS_REGION: 'eu-west-2'
+    deploy:
+      replicas: 2
+      labels:
+        - 'traefik.enable=true'
+        - 'traefik.port=5000'
+        - 'traefik.domain=api.thegift.app'
+        - 'traefik.frontend.rule=Host:api.thegift.app'
+
+volumes:
+   proxy-data:

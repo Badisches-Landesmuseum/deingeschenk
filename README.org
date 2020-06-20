@@ -1,0 +1,115 @@
+* GIFT
+
+  This repository contains source code for the GIFT App.
+
+** Info
+
+  Gift is made by the artist group, [[https://www.blasttheory.co.uk/][Blast Theory]] as part of a three year
+  research project funded by the European Union’s Horizon 2020 research and
+  innovation programme under grant agreement No 727040. It is a collaboration
+  with IT University Copenhagen, University of Nottingham, University of
+  Uppsala, Blast Theory, Next Game, the Europeana Foundation and Culture24.
+
+  Further details can be found here:
+
+  - [[https://gifting.digital/][The GIFT project]]
+  - [[https://www.blasttheory.co.uk/projects/gift/][The GIFT App]]
+
+** Getting Started
+
+   This app is comprised of:
+
+   - A frontend mobile web-app built with React in TypeScript
+   - A backend API built with Koa.js in TypeScript utilizing a PostgreSQL DB
+
+   For further details, see:
+
+   - [[file:docs/core-concepts.org::*Concepts][Concepts]]
+   - [[file:docs/schema.ts::type%20Id%20=%20string;][Schema]]
+   - [[file:docs/device-targets.org::*Desktop][Targeted Devices]]
+
+*** Requirements
+
+    - Linux
+    - NodeJS 12+ / Yarn
+      (to build / run the project)
+    - PostgreSQL (recommended) or SQLite3 database
+      (to store user-generated gift data)
+    - AWS S3 bucket
+      (to store user-generated media assets)
+    - FFmpeg 3.4+
+      (to convert user-generated media assets to a common format)
+
+*** Running locally
+
+    API:
+    #+begin_src bash
+      cd api
+      # Install dependencies
+      yarn install
+      # Setup default configuration
+      cp example.env .env
+      # Update config with custom values
+      vi .env
+      # Run the api (with verbose logging)
+      export DEBUG='(DEBUG|INFO|WARN|ERROR):*'
+      yarn start
+    #+end_src
+
+    APP:
+    #+begin_src bash
+      cd app
+      # Install dependencies
+      yarn install
+      # Run the app
+      yarn start-app
+    #+end_src
+
+    You should now be able to open http://localhost:8000 in your web browser to
+    interact with your locally running gift app.
+
+** Customisation
+
+   Currently the code to run the app contains information specific to a demo
+   museum, the Brighton Museum, and the Munch Museum. The following files /
+   directories should be considered for customisation:
+
+*** =/app/src/data.ts=
+
+    High-level configuration for the museums. This is where the particular
+    museum data used to run the current instance of the app is determined (by
+    inspecting the domain the app is being served from).
+
+*** =/app/src/services/prepared-data.ts=
+
+    May be used to provide pre-made gift data in the app before falling back to
+    an api lookup.
+
+*** =/app/src/themes/global.ts=
+
+    Global css theming.
+
+*** =/app/src/components/background-svg.tsx=
+
+    Provides switching of background image.
+
+*** =/app/assets/audio-content/=
+
+    Contains the audio assets used in the gift creation / receiving process.
+
+*** =/app/src/components/audio-transcription/=
+
+    Contains the text transcription for the audio files.
+
+*** =/app/src/components/modals/terms-modal.tsx=
+
+    Contains the text for the popup modal asking users to accept terms and
+    conditions.
+
+*** =/app/src/components/information/terms/=
+
+    Contains copy for the terms-and-conditions / privacy.
+
+*** =/app/src/components/information/help/=
+
+    Contains copy for the help / FAQs.

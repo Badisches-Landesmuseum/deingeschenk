@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+
+  postgres:
+    image: postgres:11
+    ports:
+      - '55432:5432'
+    environment:
+      POSTGRES_DB: gift
+      POSTGRES_USER: gift
+      POSTGRES_PASSWORD: gift
+    # volumes:
+    #   - type: bind
+    #     source: ./postgres-schema
+    #     target: /docker-entrypoint-initdb.d
+    #     read_only: true

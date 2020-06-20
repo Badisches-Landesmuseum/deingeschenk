@@ -1,0 +1,27 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:recommended",
+    "tslint-react"
+  ],
+  "jsRules": {},
+  "rules": {
+    "curly": [true, "ignore-same-line"],
+    "file-name-casing": [true, "kebab-case"],
+    "interface-name": [true, "never-prefix"],
+    "jsx-wrap-multiline": true,
+    "jsx-no-lambda": false,
+    "jsx-no-multiline-js": false,
+    "max-classes-per-file": [true, 1, "exclude-class-expressions"],
+    "no-consecutive-blank-lines": false,
+    "no-console": { "severity": "warning" },
+    "no-empty": false,
+    "no-empty-interface": false,
+    "no-namespace": [true, "allow-declarations"],
+    "object-literal-sort-keys": false,
+    "ordered-imports": false,
+    "quotemark": [true, "single", "avoid-escape"]
+    // "typedef": [true, "call-signature"]
+  },
+  "rulesDirectory": []
+}

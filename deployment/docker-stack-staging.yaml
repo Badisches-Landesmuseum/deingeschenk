@@ -1,0 +1,86 @@
+version: '3.7'
+
+services:
+  proxy:
+    image: traefik:1.7
+    command: --api \
+      --docker \
+      --docker.swarmmode \
+      --docker.watch \
+      --logLevel=DEBUG
+    ports:
+      - '80:80'
+      - '443:443'
+      - '8080:8080'
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+      - './traefik.toml:/traefik.toml'
+      - 'proxy-data:/data'
+
+  app:
+    image: registry.gitlab.com/blasttheory/gift/gift-app:latest
+    volumes:
+      - './nginx-app.conf:/etc/nginx/nginx.conf'
+    deploy:
+      replicas: 1
+      labels:
+        - 'traefik.enable=true'
+        - 'traefik.port=80'
+        - 'traefik.domain=staging.gift.blasttheory.com'
+        - 'traefik.frontend.rule=Host:staging.gift.blasttheory.com'
+
+  app-munch:
+    image: registry.gitlab.com/blasttheory/gift/gift-app:latest
+    volumes:
+      - './nginx-app.conf:/etc/nginx/nginx.conf'
+    deploy:
+      replicas: 1
+      labels:
+        - 'traefik.enable=true'
+        - 'traefik.port=80'
+        - 'traefik.domain=staging.munchgift.com'
+        - 'traefik.frontend.rule=Host:staging.munchgift.com'
+
+  storybook:
+    image: registry.gitlab.com/blasttheory/gift/gift-storybook:latest
+    deploy:
+      replicas: 1
+      labels:
+        - 'traefik.enable=true'
+        - 'traefik.port=80'
+        - 'traefik.domain=storybook.staging.gift.blasttheory.com'
+        - 'traefik.frontend.rule=Host:storybook.staging.gift.blasttheory.com'
+
+  api:
+    image: registry.gitlab.com/blasttheory/gift/gift-api:latest
+    depends_on:
+      - db
+    environment:
+      ENVIRONMENT: 'staging'
+      DEBUG: '(DEBUG|INFO|WARN|ERROR):*'
+      SQL_URI: 'postgresql://gift:gift@db/gift'
+      CORS_ALLOWED_ORIGINS: 'https://staging.gift.blasttheory.com, https://staging.munchgift.com'
+      AWS_BUCKET: 'bt-gift'
+      AWS_REGION: 'eu-west-2'
+    deploy:
+      replicas: 1
+      labels:
+        - 'traefik.enable=true'
+        - 'traefik.port=5000'
+        - 'traefik.domain=api.staging.gift.blasttheory.com'
+        - 'traefik.frontend.rule=Host:api.staging.gift.blasttheory.com'
+
+  db:
+    image: postgres:11
+    volumes:
+      - 'db-data:/var/lib/postgresql/data'
+    environment:
+      POSTGRES_DB: gift
+      POSTGRES_USER: gift
+      POSTGRES_PASSWORD: gift
+    deploy:
+      replicas: 1
+
+volumes:
+   db-data:
+   proxy-data:

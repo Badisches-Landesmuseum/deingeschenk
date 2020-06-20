@@ -1,0 +1,35 @@
+# defaultEntryPoints must be at the top
+# because it should not be in any table below
+
+defaultEntryPoints = ["http", "https"]
+
+# Entrypoints, http and https
+[entryPoints]
+
+# http should be redirected to https
+[entryPoints.http]
+address = ":80"
+[entryPoints.http.redirect]
+entryPoint = "https"
+
+# https is the default
+[entryPoints.https]
+address = ":443"
+
+[entryPoints.https.tls]
+
+# Enable ACME (Let's Encrypt): automatic SSL
+[acme]
+email = "michael@blasttheory.com"
+storage = "/data/acme.json"
+entryPoint = "https"
+onHostRule = true
+# caServer = "https://acme-staging-v02.api.letsencrypt.org/directory"
+
+[acme.tlsChallenge]
+
+# [docker]
+# endpoint = "unix:///var/run/docker.sock"
+# domain = "yourdomain.com"
+# watch = true
+# exposedbydefault = false
