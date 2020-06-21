@@ -41,10 +41,10 @@ export const CreateGiftIntro: React.FC<Props> = ({ onComplete }) => {
         <PanelContent>
 
           <PanelPrompt
-            text='You’re
-                  about to make
-                  a gift for someone
-                  special'
+            text='Du stellst nun
+                  ein Geschenk
+                  für eine besondere Person
+                  zusammen'
             textSize={50}
             background='transparent-black'
             onClick={() => setStatus('second-message')}
@@ -73,10 +73,10 @@ export const CreateGiftIntro: React.FC<Props> = ({ onComplete }) => {
         <PanelContent>
 
           <PanelPrompt
-            text={`It might
-              take two minutes.
-              It might take twenty.
-              It’s up to you`}
+            text={`Es kann
+              zwei Minuten dauern.
+              Oder zwanzig.
+              Ganz, wie du willst.`}
             background={'transparent-black'}
             onClick={onComplete}
           />

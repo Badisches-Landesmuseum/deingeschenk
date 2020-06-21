@@ -338,24 +338,24 @@ export class AudioPlayer extends React.PureComponent<Props, State> {
 
           <Controls>
 
-            <SkipBack onClick={this.skipBackward} aria-label='Skip back' tabIndex={2}>
+            <SkipBack onClick={this.skipBackward} aria-label='Zurückspulen' tabIndex={2}>
               <SvgButtonAudioBack />
             </SkipBack>
 
-            <Play onClick={this.togglePlay} aria-label='Play' tabIndex={0}>
+            <Play onClick={this.togglePlay} aria-label='Abspielen' tabIndex={0}>
               {isPlaying ? <SvgButtonAudioPause/> : <SvgButtonAudioPlay/>}
             </Play>
 
             {/* Skip forward seconds */}
             {this.props.forwardButtonType === 'skip-seconds' && (
-              <SkipForward onClick={this.skipForward} aria-label='Skip forward' tabIndex={1}>
+              <SkipForward onClick={this.skipForward} aria-label='Vorspulen' tabIndex={1}>
                 <SvgButtonAudioForward />
               </SkipForward>
             )}
 
             {/* Jump to end */}
             {this.props.forwardButtonType === 'go-to-end' && (
-              <SkipForward onClick={this.goToEnd} aria-label='Skip forward' tabIndex={1}>
+              <SkipForward onClick={this.goToEnd} aria-label='Überspringen' tabIndex={1}>
                 <SvgButtonAudioSkip />
               </SkipForward>
             )}

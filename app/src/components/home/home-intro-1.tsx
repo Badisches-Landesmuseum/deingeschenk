@@ -35,8 +35,7 @@ const HomeIntro1: React.FC<Props> = ({ onComplete }) => {
 
       <PanelContent topPosition='top-quarter'>
         <PanelPrompt
-          text='Ever made
-            a mixtape?'
+          text='Schon einmal ein Mixtape aufgenommen?'
           textColor='black'
           textSize={80}
           background='solid-white'
@@ -45,7 +44,7 @@ const HomeIntro1: React.FC<Props> = ({ onComplete }) => {
       </PanelContent>
 
       <PanelButtons>
-        <Button onClick={handleComplete}>Continue</Button>
+        <Button onClick={handleComplete}>Fortfahren</Button>
       </PanelButtons>
 
     </Panel>

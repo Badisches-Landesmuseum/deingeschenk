@@ -97,13 +97,13 @@ const TermsModal: React.FC<Props> = ({ onAgreeClick, onShowTerms }) => {
           {innerContent}
 
           <TermsButton onClick={onShowTerms}>
-            <TextResize textSize={40}>Read our terms &amp; privacy</TextResize>
+            <TextResize textSize={40}>Bitte lies unsere Nutzungsbedingungen &amp; Datenschutzerklärung</TextResize>
           </TermsButton>
 
         </Texts>
 
         <Buttons>
-          <Button onClick={onAgreeClick} colour='grey'>Agree and continue</Button>
+          <Button onClick={onAgreeClick} colour='grey'>Zustimmen und fortfahren</Button>
         </Buttons>
 
       </Inner>

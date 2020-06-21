@@ -118,7 +118,7 @@ const HomeGifts: React.FC<HomeGiftProps> = ({ museumName, curatedGiftId }) => {
   const atMuseum = getSessionRecipientLocation() === 'at-museum';
   const showGiftText
   = (museum.slug === 'demo') ? `Show example gift from Brighton Museum`
-  : `Show gift from ${museumName}`
+  : `Öffne das Geschenk von ${museumName}`
   ;
 
   return (
@@ -136,19 +136,19 @@ const HomeGifts: React.FC<HomeGiftProps> = ({ museumName, curatedGiftId }) => {
 
         <HeaderMessage>
           <HeaderMessageTextResize textSize={42}>
-            Think of someone special<br/>
-            and create a playlist for them<br/>
-            from objects around the museum
+            Denk an eine besondere Person<br/>
+            und erstelle ein Mixtape für sie<br/>
+            - mit Objekten aus dem Museum.
           </HeaderMessageTextResize>
 
           <ReadMoreLink onClick={() => {setHelpIsOpen(true); }}>
-            <TextResize textSize={42}>Learn more...</TextResize>
+            <TextResize textSize={42}>Mehr erfahren...</TextResize>
           </ReadMoreLink>
         </HeaderMessage>
 
         <LineSpacer />
 
-        {!atMuseum && <SectionTitle textSize={42}>If you're at the museum now...</SectionTitle>}
+        {!atMuseum && <SectionTitle textSize={42}>Wenn du jetzt im Museum bist...</SectionTitle>}
 
         <GiftsNotSent>
           {/* <TextResize textSize={50}>
@@ -160,7 +160,7 @@ const HomeGifts: React.FC<HomeGiftProps> = ({ museumName, curatedGiftId }) => {
             to='/create-gift'
           >
             <CreateAGiftOfYourOwn textSize={42}>
-              Create a new gift of your own
+              Stelle ein eigenes Geschenk zusammen
             </CreateAGiftOfYourOwn>
             <PlusStyle>
               <SvgAddCircle />
@@ -193,7 +193,7 @@ const HomeGifts: React.FC<HomeGiftProps> = ({ museumName, curatedGiftId }) => {
         <FeedbackSection>
           <ReadMoreLink>
             <TextResize textSize={42}>
-              <a href={museum.feedbackUrl} target='_blank'>Tell us what you thought...</a>
+              <a href={museum.feedbackUrl} target='_blank'>Hast du Feedback?</a>
             </TextResize>
           </ReadMoreLink>
         </FeedbackSection>

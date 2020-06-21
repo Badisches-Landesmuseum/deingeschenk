@@ -23,7 +23,7 @@ const ReceiveReply: React.FC<Props> = (props) => {
 
   // Audio
   const [hasRecording, setHasRecording] = useState(false);
-  const recordText = `Record a message to tell ${props.gift.senderName} what you thought of it`;
+  const recordText = `Nimm eine Nachricht auf und lass ${props.gift.senderName} wissen, was du davon hältst`;
 
   const todo = () => { alert('TODO'); };
 
@@ -34,12 +34,12 @@ const ReceiveReply: React.FC<Props> = (props) => {
         textSize={accordionTitleTextSize}
         textColour={accordionTextColour}
       >
-        Your reply
+        Deine Antwort
       </AccordionTitle>
 
       {hasRecording && (
         <AudioPlayer
-          message={'Listen back to your reply...'}
+          message={'Hör die deine Antwort nochmal an...'}
           src={''}
           forwardButtonType={'go-to-end'}
           giftId={props.gift.id}
@@ -52,8 +52,8 @@ const ReceiveReply: React.FC<Props> = (props) => {
 
       {/* Should this be PanelButtons ??? */}
       <Buttons>
-        <Button onClick={todo}>Re-record</Button>
-        <Button onClick={todo}>Send</Button>
+        <Button onClick={todo}>Erneut aufnehmen</Button>
+        <Button onClick={todo}>Abschicken</Button>
       </Buttons>
     </>
   );

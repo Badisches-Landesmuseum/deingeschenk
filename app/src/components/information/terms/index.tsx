@@ -9,12 +9,14 @@ import { TermsContent as TermsContentDemo } from './terms-demo';
 import { TermsContent as TermsContentBrighton } from './terms-brighton';
 import { TermsContent as TermsContentMunch } from './terms-munch';
 import { TermsContent as TermsContentMpu } from './terms-mpu';
+import { TermsContent as TermsContentBLM } from './terms-blm';
 
 
 const TermsContent = (museum.slug === 'demo') ? TermsContentDemo
                    : (museum.slug === 'brighton') ? TermsContentBrighton
                    : (museum.slug === 'munch') ? TermsContentMunch
                    : (museum.slug === 'mpu') ? TermsContentMpu
+                   : (museum.slug === 'blm') ? TermsContentBLM
                    : assertNever(museum.slug);
 
 

@@ -82,7 +82,7 @@ const GiftPile: React.FC<Props> = ({ gifts, source }: Props) => {
           <SvgGift colour='black' />
         </GiftImg>
         <GiftTitle>
-          <GiftFrom textSize={30}>from</GiftFrom>
+          <GiftFrom textSize={30}>von</GiftFrom>
           <SenderName textSize={30}>{gift.senderName}</SenderName>
         </GiftTitle>
         {/* <GiftStatus textSize={30}>New</GiftStatus> */}

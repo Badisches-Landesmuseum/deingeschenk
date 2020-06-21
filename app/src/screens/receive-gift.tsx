@@ -28,28 +28,28 @@ export const ReceiveGiftScreen: React.FC = () => {
   const [preloadState] = usePreload(assetUrls);
 
 
-  if (getGiftTask.kind === 'running') return <WorkingProgress text='Loading your gift...' percent={0} />;
+  if (getGiftTask.kind === 'running') return <WorkingProgress text='Lade dein Geschenk...' percent={0} />;
   if (getGiftTask.kind === 'failure') {
-    return <ErrorMessage message='There was an issue retrieving your gift from our server' />;
+    return <ErrorMessage message='Wir konnten dein Geschenk leider nicht auf unserem Server finden.' />;
   }
 
   const apiResult = getGiftTask.result;
 
   if (apiResult.kind === 'http-error' && apiResult.response.status === 404) {
-    return <ErrorMessage message='Gift not found' />;
+    return <ErrorMessage message='Geschenk nicht gefunden' />;
   }
   if (apiResult.kind !== 'ok') {
-    return <ErrorMessage message='There was an issue retrieving your gift from our server' />;
+    return <ErrorMessage message='Wir konnten dein Geschenk leider nicht auf unserem Server finden.' />;
   }
 
   // Special-case: usePreload state hasn't yet propogated the fact that we now have assets to retrieve
   if (preloadState.urlProgress.size !== assetUrls.length) {
-    return <WorkingProgress text='Loading your gift...' percent={0} />;
+    return <WorkingProgress text='Lade dein Geschenk...' percent={0} />;
   }
   if (preloadState.status === 'running') {
-    return <WorkingProgress text='Loading your gift...' percent={Math.round(totalProgress(preloadState) * 100)} />;
+    return <WorkingProgress text='Lade dein Geschenk...' percent={Math.round(totalProgress(preloadState) * 100)} />;
   }
-  if (preloadState.status === 'error') return <ErrorMessage message='Assets not found' />;
+  if (preloadState.status === 'error') return <ErrorMessage message='Assets nicht gefunden' />;
 
   const giftResponse = apiResult.data;
   const preloadedAssetGift = substituteAssetUrls(giftResponse, preloadState.urlData);

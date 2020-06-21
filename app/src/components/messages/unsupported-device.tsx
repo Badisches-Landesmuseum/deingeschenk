@@ -32,7 +32,7 @@ const UnsupportedDevice: React.FC<Props> = ({ message }) => {
     <ScreenManager>
       <ScreenMessage message={message}>
         <DeviceButtons>
-          <Button colour='black' onClick={() => { setDeviceListIsOpen(true); }}>Show supported devices</Button>
+          <Button colour='black' onClick={() => { setDeviceListIsOpen(true); }}>Zeige unterstützte Geräte</Button>
         </DeviceButtons>
       </ScreenMessage>
     {deviceListIsOpen && (

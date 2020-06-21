@@ -30,7 +30,7 @@ export const CreateGiftChooseRecipient: React.FC<Props> = ({ giftId, onComplete 
 
       {showingEnterRecipient && (
         <TextInputModal
-          placeHolder='Their first name'
+          placeHolder='Vorname'
           onSaveClick={(recipientName) => { onComplete(recipientName); }}
           onCancelClick={() => { setShowingEnterRecipient(false); }}
         />
@@ -48,7 +48,7 @@ export const CreateGiftChooseRecipient: React.FC<Props> = ({ giftId, onComplete 
         <PanelContent>
 
           <AudioPlayer
-            message={'Who are you going to choose?'}
+            message={'Wen wirst du beschenken?'}
             src={assetStore.assets.cStart}
             forwardButtonType={'go-to-end'}
             giftId={giftId}
@@ -61,7 +61,7 @@ export const CreateGiftChooseRecipient: React.FC<Props> = ({ giftId, onComplete 
         <PanelButtons>
           {audioHasPlayed && (
             <Button onClick={() => { setShowingEnterRecipient(true); }} primary={true}>
-              Enter their name
+              Gib den Namen ein
             </Button>
           )}
         </PanelButtons>

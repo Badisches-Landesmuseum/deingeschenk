@@ -56,7 +56,7 @@ const HomeNewGift: React.FC<Props> = ({ museumName, curatedGiftId }) => {
             <SvgGift colour='black' />
           </GiftImg>
 
-          <PanelText textSize={60}>You’ve got a gift from {museumName}</PanelText>
+          <PanelText textSize={60}>Du hast ein Geschenk erhalten von {museumName}</PanelText>
 
         </PanelPrompt>
       </PanelContent>
@@ -66,14 +66,14 @@ const HomeNewGift: React.FC<Props> = ({ museumName, curatedGiftId }) => {
           onClick={handleCreateYourOwn}
           to='/create-gift'
         >
-          Create my own
+          Mache ein Geschenk
         </ButtonLink>
 
         <ButtonLink
           onClick={handleOpenGift}
           to={`/gift/${curatedGiftId}`}
         >
-          Show museum's
+          Das Geschenk vom Museum öffnen
         </ButtonLink>
       </PanelButtons>
 

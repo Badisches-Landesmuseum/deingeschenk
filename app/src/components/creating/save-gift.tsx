@@ -54,17 +54,17 @@ export const SaveGift: React.FC<Props> = ({ gift, onComplete }) => {
 
 
   if (saver.kind === 'uploading-assets') {
-    return <SavingInProgress text='Saving your gift' progress={Math.round(saver.progress * 100)} />;
+    return <SavingInProgress text='Dein Geschenk wird hochgeladen' progress={Math.round(saver.progress * 100)} />;
   }
 
   if (saver.kind === 'saving-gift' || saver.kind === 'done') {
-    return <SavingInProgress text='Processing gift... please be patient' />;
+    return <SavingInProgress text='Geschenk wird verarbeitet... einen Moment.' />;
   }
 
   if (saver.kind === 'invalid-gift') {
     return (
       <SavingFailedUnrecoverable
-        text={`There was a problem saving your gift. Unfortunately it can't be recovered`}
+        text={`Dein Geschenk konnte nicht hochgeladen werden. Leider kann es nicht wiederhergestellt werden.`}
       />
     );
   }
@@ -72,8 +72,8 @@ export const SaveGift: React.FC<Props> = ({ gift, onComplete }) => {
   if (saver.kind === 'uploading-assets-error') {
     return (
       <SavingFailed
-        text="Please check you're connected to the internet"
-        buttonText='Try again'
+        text="Hochladen fehlgeschlagen. Bitte überprüfe die Internetverbindung."
+        buttonText='Nochmal versuchen'
         onClick={() => {
           events.track(cSavingRetriedEvent(gift.id));
           saver.retry();
@@ -86,8 +86,8 @@ export const SaveGift: React.FC<Props> = ({ gift, onComplete }) => {
     if (saver.error.kind === 'http-error') {
       return (
         <SavingFailed
-          text='There was a problem saving your gift. Please try again'
-          buttonText='Try again'
+          text='Dein Geschenk konnte nicht hochgeladen werden. Bitte probiere es erneut.'
+          buttonText='Nochmal versuchen'
           onClick={() => {
             events.track(cSavingRetriedEvent(gift.id));
             saver.retry();
@@ -98,8 +98,8 @@ export const SaveGift: React.FC<Props> = ({ gift, onComplete }) => {
 
     return (
       <SavingFailed
-        text="Please check you're connected to the internet"
-        buttonText='Try again'
+        text="Bitte überprüfe deine Internetverbindung."
+        buttonText='Nochmal versuchen'
         onClick={() => {
           events.track(cSavingRetriedEvent(gift.id));
           saver.retry();
@@ -119,8 +119,8 @@ interface SavingInProgressProps {
 }
 export const SavingInProgress: React.FC<SavingInProgressProps> = ({ text, progress }) => (
   <Panel>
-    <PanelTitle>Finish your gift</PanelTitle>
-    <PanelSubTitle>Saving it</PanelSubTitle>
+    <PanelTitle>Stelle dein Geschenk fertig</PanelTitle>
+    <PanelSubTitle>Wird hochgeladen</PanelSubTitle>
     <PanelContent>
       <PanelRound background='transparent-black'>
         <ProgressLoader text={text} percent={progress} colourTheme='white' />
@@ -137,8 +137,8 @@ interface SavingFailedProps {
 }
 const SavingFailed: React.FC<SavingFailedProps> = ({ text, buttonText, onClick }) => (
   <Panel>
-    <PanelTitle>Finish your gift</PanelTitle>
-    <PanelSubTitle>Saving failed</PanelSubTitle>
+    <PanelTitle>Stelle dein Geschenk fertig</PanelTitle>
+    <PanelSubTitle>Hochladen gescheitert</PanelSubTitle>
     <PanelContent>
       <PanelPrompt background='transparent-black' text={text} />
     </PanelContent>
@@ -155,13 +155,13 @@ interface SavingFailedUnrecoverableProps {
 }
 const SavingFailedUnrecoverable: React.FC<SavingFailedUnrecoverableProps> = ({ text }) => (
   <Panel>
-    <PanelTitle>Finish your gift</PanelTitle>
-    <PanelSubTitle>Saving failed</PanelSubTitle>
+    <PanelTitle>Stelle dein Geschenk fertig</PanelTitle>
+    <PanelSubTitle>Hochladen gescheitert</PanelSubTitle>
     <PanelContent>
       <PanelPrompt background='transparent-black' text={text} />
     </PanelContent>
     <PanelButtons>
-      <Button onClick={() => history.push('/')} primary={true}>Home</Button>
+      <Button onClick={() => history.push('/')} primary={true}>Start</Button>
     </PanelButtons>
   </Panel>
 );

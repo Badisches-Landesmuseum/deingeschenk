@@ -81,8 +81,8 @@ preparedGifts.set(uuidv5('https://api.thegift.app/gift/mpu-1', uuidv5.URL), {
   id: uuidv5('https://api.thegift.app/gift/mpu-1', uuidv5.URL),
   kind: 'MuseumGift',
   museumId: uuidv5('https://api.thegift.app/museum/mpu', uuidv5.URL),
-  senderName: 'Museum of Applied Art',
-  recipientName: 'visitor',
+  senderName: 'Badisches Landesmuseum',
+  recipientName: 'Besucher',
   parts: [
     {
       photo: 'https://bt-gift.s3.eu-west-2.amazonaws.com/static-content/curated/mpu-bb61f6c8/part-1-photo.6b35a49f.jpg',

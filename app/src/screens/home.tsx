@@ -32,7 +32,8 @@ import {
  */
 
 export const MainTitle = styled(TextResize).attrs({
-  textSize: 320,
+  //textSize: 320,
+  textSize: 200,
 })`
   z-index: 1;
   text-align: center;
@@ -53,7 +54,8 @@ export const MuseumName = styled(TextResize).attrs({
 `;
 
 export const MainTitleSmall = styled(TextResize).attrs({
-  textSize: 160,
+  //textSize: 160,
+  textSize: 100,
 })`
   z-index: 1;
   text-align: center;
@@ -202,14 +204,14 @@ export const HomeScreen: React.FC = () => {
       {/* Title */}
       {homeHeader && (
         <>
-          <MainTitleSmall>Gift</MainTitleSmall>
-          <MuseumNameSmall>{`at ${museumName}`}</MuseumNameSmall>
+          <MainTitleSmall>Das Geschenk</MainTitleSmall>
+          <MuseumNameSmall>{`im Badischen Landesmuseum`}</MuseumNameSmall>
         </>
       )}
       {!homeHeader && (
         <>
-          <MainTitle>Gift</MainTitle>
-          <MuseumName>{`at ${museumName}`}</MuseumName>
+          <MainTitle>Das Geschenk</MainTitle>
+          <MuseumName>{`im Badischen Landesmuseum`}</MuseumName>
         </>
       )}
 
@@ -234,7 +236,7 @@ export const HomeScreen: React.FC = () => {
         <HomeGifts museumName={museumName} curatedGiftId={curatedGiftId} />
       )}
 
-      {showFeedback && (
+      { (showFeedback && false) && (
         <FeedbackModal
           feedbackUrl={museum.feedbackUrl}
           feedbackText={museum.feedbackText}

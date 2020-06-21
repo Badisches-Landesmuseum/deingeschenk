@@ -69,7 +69,7 @@ const AccordionTitleStyle = styled.div<AccordionTitleProps>`
   ${(props: AccordionTitleProps) => props.showOpenPrompt && `
     position: relative;
     &:before {
-      content: 'Click to open';
+      content: 'Klicke zum Öffnen';
       position: absolute;
       top: -4vh;
       text-align: center;

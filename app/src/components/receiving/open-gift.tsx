@@ -48,7 +48,7 @@ export const ReceivingOpenGift: React.FC<Props> = ({ onComplete }) => {
             <GiftImage>
               <SvgGift colour='black' />
             </GiftImage>
-            <OpenText>Click to open</OpenText>
+            <OpenText>Klicke zum Öffnen</OpenText>
           </OpenPanel>
         </PanelRound>
       </PanelContent>

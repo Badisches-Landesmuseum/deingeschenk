@@ -17,7 +17,7 @@ const PageChangeDetect: React.FC<Props> = ({
   enabled = true,
   promptOnReloadAndClose = true,
   promptOnRouterLinkClick = true,
-  confirmationMessage = 'Are you sure you want to leave?',
+  confirmationMessage = 'Bist du sicher, dass du die Seite verlassen willst?',
 }) => {
 
   if (enabled && promptOnReloadAndClose) {

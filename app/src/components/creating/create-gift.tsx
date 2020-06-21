@@ -95,7 +95,7 @@ export const CreateGift: React.FC<Props> = ({ museumName, museumId }) => {
       <GlobalStyles />
       <PageChangeDetect
         enabled={!canNavigateAway()}
-        confirmationMessage='Leaving this page will abandon your gift.  Are you sure?'
+        confirmationMessage='Dein Geschenk wird nicht gespeichert, wenn du fortfährst. Bist du sicher?'
       />
 
       {/* Header */}
@@ -104,14 +104,14 @@ export const CreateGift: React.FC<Props> = ({ museumName, museumId }) => {
         <ScreenHeader
           museumName={museumName}
         />
-        <MainTitle>Creating<br/>
-          a gift</MainTitle>
+        <MainTitle>Erstelle<br/>
+          ein Geschenk</MainTitle>
       </>
       )}
 
       {headerState === 'named-small' && (
        <ScreenHeader
-         preSubTitle={`Creating a gift for`}
+         preSubTitle={`Erstelle ein Geschenk für`}
          subTitle={gift.recipientName}
          background={'white'}
          museumName={museumName}
@@ -159,6 +159,7 @@ export const CreateGift: React.FC<Props> = ({ museumName, museumId }) => {
            setGift({...gift, senderName });
            setStatus('save-gift');
          }}
+         recipientName={gift.recipientName}
        />
       )}
 

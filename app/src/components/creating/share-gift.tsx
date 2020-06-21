@@ -116,10 +116,10 @@ export const ShareGift: React.FC<ShareGiftProps> = ({
   const [showFeedbackModal, setShowFeedbackModal] = useState(false);
 
   // String templates
-  const shareText = `Here's a gift that I made for you at ${museumName}... `;
-  const emailText = `mailto:?subject=A gift from me at ${museumName}...&body=Dear ${recipientName},
+  const shareText = `Hier ist ein Geschenk, das ich für dich im Badischen Landesmuseum gemacht habe... `;
+  const emailText = `mailto:?subject=Ein Geschenk von mir aus dem Badischen Landesmuseum &body=Hallo ${recipientName},
 
-  Here's a gift that I made for you at ${museumName}. Click on the link below to open it!
+  Hier ist ein Geschenk, das ich für dich im Badischen Landesmuseum gemacht habe. Klicke auf den Link um es zu öffnen!
 
   ${url}
 
@@ -143,7 +143,7 @@ export const ShareGift: React.FC<ShareGiftProps> = ({
         <FeedbackModal feedbackUrl={museum.feedbackUrl} onFinished={() => {setShowFeedbackModal(false); }} />
       }
 
-      <PanelTitle>Send your gift</PanelTitle>
+      <PanelTitle>Verschicke dein Geschenk</PanelTitle>
 
       <SharesContent>
         <Shares>
@@ -181,7 +181,7 @@ export const ShareGift: React.FC<ShareGiftProps> = ({
       </SharesContent>
 
       <PanelButtons>
-        <Button onClick={onComplete} colour={'black'}>Continue</Button>
+        <Button onClick={onComplete} colour={'black'}>Weiter</Button>
       </PanelButtons>
 
     </Panel>

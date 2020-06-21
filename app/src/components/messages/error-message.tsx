@@ -33,11 +33,11 @@ const ErrorMessage: React.FC<Props> = ({ message }) => (
 
       <ErrorTextResize>{message}</ErrorTextResize>
 
-      <ErrorTextResize>Cancel to return to the Gift homepage</ErrorTextResize>
+      <ErrorTextResize>Abbrechen um zur Startseite zurückzukehren</ErrorTextResize>
 
       <DeviceButtons>
-        <ButtonLink colour='black' to='/'>Cancel</ButtonLink>
-        <ButtonAnchor colour='black' href={window.location.href}>Try again</ButtonAnchor>
+        <ButtonLink colour='black' to='/'>Abbrechen</ButtonLink>
+        <ButtonAnchor colour='black' href={window.location.href}>Nochmal versuchen</ButtonAnchor>
       </DeviceButtons>
 
     </ScreenMessage>

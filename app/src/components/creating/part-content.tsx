@@ -217,8 +217,8 @@ export const CreatingPartContent: React.FC<Props> = ({ recipientName, gift, onCo
         <PanelContent>
           {giftPartIndex === 0 && (
             <PanelPrompt
-              text={`Thanks.
-                Now time to choose your first object for ${recipientName}`}
+              text={`Danke.
+                Wähle jetzt dein erstes Objekt für ${recipientName}`}
               background={'transparent-black'}
               onClick={() => { setStatus('second-message'); }}
             />
@@ -264,8 +264,9 @@ export const CreatingPartContent: React.FC<Props> = ({ recipientName, gift, onCo
         <PanelContent>
           {giftPartIndex === 0 && (
             <AudioPlayer
-              message={`Listen while
-                you look for your first object...`}
+              message={`Höre zu und suche
+                nach deinem ersten
+                Objekt...`}
               src={assetStore.assets.cChoosePart1}
               forwardButtonType={'go-to-end'}
               giftId={gift.id}
@@ -275,7 +276,7 @@ export const CreatingPartContent: React.FC<Props> = ({ recipientName, gift, onCo
           )}
           {giftPartIndex === 1 && (
             <AudioPlayer
-              message={'Time to choose a second object...'}
+              message={'Zeit, dein zweites Objekt auszuwählen...'}
               src={assetStore.assets.cChoosePart2}
               forwardButtonType={'go-to-end'}
               giftId={gift.id}
@@ -285,7 +286,7 @@ export const CreatingPartContent: React.FC<Props> = ({ recipientName, gift, onCo
           )}
           {giftPartIndex === 2 && (
             <AudioPlayer
-              message={'Time to look for a final object...'}
+              message={'Zeit, ein letztes Objekt zu finden...'}
               src={assetStore.assets.cChoosePart3}
               forwardButtonType={'go-to-end'}
               giftId={gift.id}
@@ -296,7 +297,7 @@ export const CreatingPartContent: React.FC<Props> = ({ recipientName, gift, onCo
         </PanelContent>
         <PanelButtons>
           {firstAudioHasPlayed && (
-            <Button onClick={() => {setStatus('take-photo'); }} primary={true}>Continue</Button>
+            <Button onClick={() => {setStatus('take-photo'); }} primary={true}>Weiter</Button>
           )}
         </PanelButtons>
       </>
@@ -312,7 +313,7 @@ export const CreatingPartContent: React.FC<Props> = ({ recipientName, gift, onCo
         <PanelContent>
           {giftPartIndex === 0 && (
             <PhotoCapture
-              text={`If you’ve \n found your first object, take a photo so they can see what you’ve chosen`}
+              text={`Hast du dein \n erstes Objekt gefunden? Mach ein Foto für das Geschenk.`}
               onPhotoTaken={(file) => {
                 events.track(cPartPhotoCompletedEvent(gift.id, partNumber));
                 handlePhotoTaken(file);
@@ -322,8 +323,8 @@ export const CreatingPartContent: React.FC<Props> = ({ recipientName, gift, onCo
           )}
           {giftPartIndex === 1 && (
             <PhotoCapture
-              text={`Look for
-                your second object for ${recipientName}. When you’ve found it take a photo for them`}
+              text={`Wähle dein zweites Objekt
+                für ${recipientName}. Wenn du es gefunden hast, mache ein Foto.`}
               onPhotoTaken={(file) => {
                 events.track(cPartPhotoCompletedEvent(gift.id, partNumber));
                 handlePhotoTaken(file);
@@ -333,8 +334,8 @@ export const CreatingPartContent: React.FC<Props> = ({ recipientName, gift, onCo
           )}
           {giftPartIndex === 2 && (
             <PhotoCapture
-              text={`Choose
-                your last object and take a photo`}
+              text={`Wähle
+                dein letztes Objekt aus und mache ein Foto.`}
               onPhotoTaken={(file) => {
                 events.track(cPartPhotoCompletedEvent(gift.id, partNumber));
                 handlePhotoTaken(file);
@@ -345,7 +346,7 @@ export const CreatingPartContent: React.FC<Props> = ({ recipientName, gift, onCo
         </PanelContent>
         <PanelButtons>
           {/* <Button onClick={() => {setStatus('second-message'); }}>Back</Button> */}
-          <Button onClick={() => {if (photoCapture) photoCapture.showCamera(); }} primary={true}>Open camera</Button>
+          <Button onClick={() => {if (photoCapture) photoCapture.showCamera(); }} primary={true}>Kamera öffnen</Button>
         </PanelButtons>
       </>
     );
@@ -383,8 +384,8 @@ export const CreatingPartContent: React.FC<Props> = ({ recipientName, gift, onCo
         <PanelContent>
           {giftPartIndex === 0 && (
             <AudioPlayer
-                message={`Great.
-                  Here's the next step...`}
+                message={`Großartig!
+                  Hier ist der nächste Schritt...`}
                 src={assetStore.assets.cLetThemKnowPart1}
                 forwardButtonType={'go-to-end'}
                 giftId={gift.id}
@@ -394,8 +395,8 @@ export const CreatingPartContent: React.FC<Props> = ({ recipientName, gift, onCo
           )}
           {giftPartIndex === 1 && (
             <AudioPlayer
-                message={`Great.
-                  Time for your next message...`}
+                message={`Großartig.
+                  Zeit für deine nächste Nachricht...`}
                 src={assetStore.assets.cLetThemKnowPart2}
                 forwardButtonType={'go-to-end'}
                 giftId={gift.id}
@@ -405,8 +406,8 @@ export const CreatingPartContent: React.FC<Props> = ({ recipientName, gift, onCo
           )}
           {giftPartIndex === 2 && (
             <AudioPlayer
-                message={`Great.
-                  Time to record your final message...`}
+                message={`Sehr gut.
+                  Zeit für deine letzte Nachricht...`}
                 src={assetStore.assets.cLetThemKnowPart3}
                 forwardButtonType={'go-to-end'}
                 giftId={gift.id}
@@ -418,7 +419,7 @@ export const CreatingPartContent: React.FC<Props> = ({ recipientName, gift, onCo
         <PanelButtons>
           {/* {secondAudioHasPlayed && <Button onClick={() => {setStatus('record-message'); }}>Skip</Button>} */}
           {secondAudioHasPlayed && (
-            <Button onClick={() => {setStatus('record-message'); }} primary={true}>Record message</Button>
+            <Button onClick={() => {setStatus('record-message'); }} primary={true}>Aufnahme beginnen</Button>
           )}
         </PanelButtons>
       </>
@@ -427,18 +428,18 @@ export const CreatingPartContent: React.FC<Props> = ({ recipientName, gift, onCo
 
   function renderRecordMessage() {
 
-    const text = (giftPartIndex === 0) ? `Let ${recipientName} know why you chose this object...`
-               : (giftPartIndex === 1) ? 'Tell them why you chose this...'
-               : (giftPartIndex === 2) ? 'And record your final message...'
+    const text = (giftPartIndex === 0) ? `Lass ${recipientName} wissen, warum du dieses Objekt ausgewählt hast...`
+               : (giftPartIndex === 1) ? 'Beschreibe, warum du das ausgewählt hast...'
+               : (giftPartIndex === 2) ? 'Nimm deine letzte Nachricht auf...'
                : '';
 
     return (
       <CreateGiftRecordAndPlayback
-        playbackMessage={'Listen back to check your message is OK...'}
+        playbackMessage={'Möchtest du deine Nachricht noch einmal anhören?'}
         gift={gift}
         giftPartIndex={giftPartIndex}
         text={text}
-        saveButtonText={'Save message'}
+        saveButtonText={'Nachricht speichern'}
         onComplete={handleAudioRecordFinished}
         onReRecord={handleAudioReRecord}
       />
@@ -453,12 +454,12 @@ export const CreatingPartContent: React.FC<Props> = ({ recipientName, gift, onCo
         <PanelContent>
           <PanelPrompt
             background={'transparent-black'}
-            text={`Problem recording?
-              Try disconnecting headphones if you have them`}
+            text={`Probleme mit der Aufnahme?
+              Stecke deine Kopfhörer aus, falls du welche benutzt.`}
           />
         </PanelContent>
         <PanelButtons>
-          <Button onClick={openHelp}>Help</Button>
+          <Button onClick={openHelp}>Hilfe</Button>
           <Button onClick={() => {setStatus('record-message'); }} primary={true}>OK</Button>
         </PanelButtons>
       </>
@@ -476,7 +477,7 @@ export const CreatingPartContent: React.FC<Props> = ({ recipientName, gift, onCo
         <PanelContent>
           <PanelPrompt
             background={'transparent-black'}
-            text={`Now write a clue to help ${recipientName} find the object`}
+            text={`Schreibe jetzt einen hinweis, wo ${recipientName} das Objekt finden kann`}
             onClick={next}
           />
           <WaitThen
@@ -491,8 +492,8 @@ export const CreatingPartContent: React.FC<Props> = ({ recipientName, gift, onCo
   function renderPreClueMessage2() {
 
     const text = (giftPartIndex === 0)
-      ? `Mention the room you’re in... or something they can ask museum staff if they get stuck`
-      : `Now write a clue to help ${recipientName} find the object`;
+      ? `Beschreibe deine Umgebung... oder einen Anhaltspunkt für Nachfragen bei den Aufsichten.`
+      : `Schreibe jetzt einen Hinweis, wo ${recipientName} das Objekt finden kann`;
 
     const next = () => { setShowingEnterClue(true); };
 
@@ -512,9 +513,9 @@ export const CreatingPartContent: React.FC<Props> = ({ recipientName, gift, onCo
               clearClueAndNext();
             }}
           >
-            Skip
+            Überspringen
           </Button>
-          <Button onClick={next}>Write a clue</Button>
+          <Button onClick={next}>Hinweis schreiben</Button>
         </PanelButtons>
       </>
     );
@@ -538,9 +539,9 @@ export const CreatingPartContent: React.FC<Props> = ({ recipientName, gift, onCo
     };
 
     const text = giftPartIndex === 0
-      ? `Great.
-          You’ve made part one of your gift for ${recipientName}`
-      : `Done!`;
+      ? `Prima.
+          Du hast den ersten Teil deines Geschenks für ${recipientName} fertiggestellt.`
+      : `Erledigt!`;
 
     const wait = giftPartIndex === 0 ? 3 : 1;
 
@@ -567,7 +568,7 @@ export const CreatingPartContent: React.FC<Props> = ({ recipientName, gift, onCo
         <PanelContent>
           {giftPartIndex === 0 && (
             <PanelPrompt
-              text={`They’re going to love it`}
+              text={`Das wird ein tolles Geschenk.`}
               background={'transparent-black'}
               onClick={() => { setStatus('send-or-add-more'); }}
             />
@@ -587,27 +588,27 @@ export const CreatingPartContent: React.FC<Props> = ({ recipientName, gift, onCo
         <PanelContent>
           {giftPartIndex === 0 && (
             <PanelPrompt
-              text={`Do you want
-                to add another object or send it as it is?
-                You can choose up to three`}
+              text={`Willst du dein Geschenk schon verschicken
+                oder noch ein Objekt hinzufügen?
+                Du kannst bis zu drei auswählen.`}
               background={'transparent-black'}
             />
           )}
           {giftPartIndex === 1 && (
             <PanelPrompt
-              text={`Do you want
-                to add a final object or send it as it is?`}
+              text={`Willst du dein Geschenk schon verschicken
+                oder ein letztes Objekt hinzufügen?`}
               background={'transparent-black'}
             />
           )}
         </PanelContent>
         <PanelButtons>
-          <Button onClick={handleAllComplete}>Send now</Button>
+          <Button onClick={handleAllComplete}>Jetzt senden</Button>
           {giftPartIndex === 0 && (
-            <Button onClick={handleStartPart2} primary={true}>Add another</Button>
+            <Button onClick={handleStartPart2} primary={true}>Objekt hinzufügen</Button>
           )}
           {giftPartIndex === 1 && (
-           <Button onClick={handleStartPart3} primary={true}>Add another</Button>
+           <Button onClick={handleStartPart3} primary={true}>Objekt hinzufügen</Button>
           )}
         </PanelButtons>
       </>
@@ -618,7 +619,7 @@ export const CreatingPartContent: React.FC<Props> = ({ recipientName, gift, onCo
     <>
       {showingEnterClue && (
         <TextAreaModal
-          placeHolder='Write a clue'
+          placeHolder='Schreibe einen Hinweis'
           onSaveClick={(clue: string) => {
             events.track(cPartClueCompletedEvent(gift.id, partNumber));
             handleClueSet(clue);

@@ -61,8 +61,8 @@ const TextInputModal: React.FC<Props> = ({
         />
 
         <ModalButtons>
-          <Button onClick={handleCancelClick}>Cancel</Button>
-          <Button onClick={handleSaveClick} disabled={text === ''}>Save</Button>
+          <Button onClick={handleCancelClick}>Abbrechen</Button>
+          <Button onClick={handleSaveClick} disabled={text === ''}>Speichern</Button>
         </ModalButtons>
 
       </Inner>

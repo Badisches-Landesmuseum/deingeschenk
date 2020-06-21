@@ -211,7 +211,7 @@ class GiftPartWrapper extends React.PureComponent<Props, State> {
           textSize={'medium'}
           textColour={'white'}
         >
-          Part {romanNumeralFromDecimal(giftPartIndex + 1)}
+          Teil {romanNumeralFromDecimal(giftPartIndex + 1)}
         </AccordionTitle>
         {this.getGiftPartContent()}
       </StyledGiftPart>

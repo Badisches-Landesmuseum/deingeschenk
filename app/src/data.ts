@@ -153,6 +153,42 @@ const mpu: Museum = {
 
 
 /**
+ * Badisches Landesmuseum
+ *
+ * ID: TODO
+ */
+// tslint:disable max-line-length
+const blm: Museum = {
+  id: uuidv5('https://api.thegift.app/museum/mpu', uuidv5.URL), // TODO
+  slug: 'blm',
+  name: 'Badisches Landesmuseum',
+  curatedGiftId: uuidv5('https://api.thegift.app/gift/mpu-1', uuidv5.URL), // TODO
+  promoLink: '/promo', // TODO
+  promoDestination: `/gift/${uuidv5('https://api.thegift.app/gift/mpu-1', uuidv5.URL)}`, // TODO
+  feedbackUrl: 'https://www.surveymonkey.co.uk/r/belgrade-gift', // TODO
+  homeScreenStartPoint: 'ever-made-a-mixtape', // TODO
+  homeScreenShowCuratedGift: true,
+  assets: {
+    cChoosePart1: require('./assets/audio/blm/c-choose-part-1.mp3') as string,
+    cChoosePart2: require('./assets/audio/blm/c-choose-part-2.mp3') as string,
+    cChoosePart3: require('./assets/audio/blm/c-choose-part-3.mp3') as string,
+    cLetThemKnowPart1: require('./assets/audio/blm/c-let-them-know-part-1.mp3') as string,
+    cLetThemKnowPart2: require('./assets/audio/blm/c-let-them-know-part-2.mp3') as string,
+    cLetThemKnowPart3: require('./assets/audio/blm/c-let-them-know-part-3.mp3') as string,
+    cStart: require('./assets/audio/blm/c-start-gift.mp3') as string,
+    cShare: require('./assets/audio/blm/c-share.mp3') as string,
+    rIntroContentAtMuseumMuseumGift: require('./assets/audio/blm/r-intro-content-local-museum.mp3') as string,
+    rIntroContentAtMuseumPersonalGift: require('./assets/audio/blm/r-intro-content-local-personal.mp3') as string,
+    rIntroContentNotAtMuseumMuseumGift: require('./assets/audio/blm/r-intro-content-remote-museum.mp3') as string,
+    rIntroContentNotAtMuseumPersonalGift: require('./assets/audio/blm/r-intro-content-remote-personal.mp3') as string,
+    rOutroAtMuseumMuseumGift: require('./assets/audio/blm/r-outro-local-museum.mp3') as string,
+    rOutroAtMuseumPersonalGift: require('./assets/audio/blm/r-outro-local-personal.mp3') as string,
+    rOutroNotAtMuseumMuseumGift: require('./assets/audio/blm/r-outro-remote-museum.mp3') as string,
+    rOutroNotAtMuseumPersonalGift: require('./assets/audio/blm/r-outro-remote-personal.mp3') as string,
+  },
+};
+
+/**
  * Determine which museum data this instance of the app should be running with.
  *
  * Decision is made via (in order of precedence):
@@ -194,4 +230,4 @@ function chooseMuesum(): Museum {
 }
 
 
-export const museum = chooseMuesum();
+export const museum = blm;

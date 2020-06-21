@@ -55,9 +55,9 @@ const HomeCreateGift: React.FC<Props> = ({ onMoreClick }) => {
           onClick={handleCreateClick}
           to='/create-gift'
         >
-          Create a gift
+          Mache ein Geschenk
         </ButtonLink>
-        <Button onClick={handleMoreClick}>More...</Button>
+        <Button onClick={handleMoreClick}>Mehr...</Button>
       </PanelButtons>
 
     </Panel>

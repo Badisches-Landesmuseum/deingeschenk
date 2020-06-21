@@ -174,7 +174,7 @@ const PlaybackPanel: React.FC<{
       </PanelContent>
       {showButtons && (
         <PanelButtons>
-          <Button onClick={onReRecordClicked}>Try again</Button>
+          <Button onClick={onReRecordClicked}>Neu aufnehmen</Button>
           <Button primary={true} onClick={onSaveClicked}>{saveButtonText}</Button>
         </PanelButtons>
       )}

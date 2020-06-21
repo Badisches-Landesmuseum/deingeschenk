@@ -52,7 +52,7 @@ const CreatingOutro: React.FC<Props> = ({ gift }) => {
 
       <PanelContent>
         <AudioPlayer
-          message='Thank you...'
+          message='Danke...'
           src={assetStore.assets.cShare}
           forwardButtonType={'go-to-end'}
           giftId={gift.id}

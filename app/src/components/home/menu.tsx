@@ -24,7 +24,7 @@ const MenuBurgerStyle = styled.button`
   width: 8%;
   position: absolute;
   top: 3.3vh;
-  left: 5%;
+  right: 5%;
 `;
 
 interface MenuBurgerProps {
@@ -148,9 +148,9 @@ const Menu: React.FC<MenuProps> = (props) => {
   return (
     <MenuWrap className={menuOpenedClass} onClick={handleCloseClick}>
       <MenuStyle className={menuOpenedClass}>
-        <MenuItem><Link onClick={handleCloseClick} to='/'>Home</Link></MenuItem>
-        <MenuItem onClick={props.openHelp}>Help</MenuItem>
-        <MenuItem onClick={props.openPrivacy}>Privacy</MenuItem>
+        <MenuItem><Link onClick={handleCloseClick} to='/'>Start</Link></MenuItem>
+        <MenuItem onClick={props.openHelp}>Hilfe</MenuItem>
+        <MenuItem onClick={props.openPrivacy}>Datenschutz</MenuItem>
         <MenuItem><a href={museum.feedbackUrl} target='_blank'>Feedback</a></MenuItem>
         <CloseMenuItem onClick={handleCloseClick} aria-label='close menu'><CloseArrowUp /></CloseMenuItem>
       </MenuStyle>

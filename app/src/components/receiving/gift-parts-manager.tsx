@@ -94,7 +94,7 @@ const GiftPartsManager: React.FC<Props> = ({ gift, recipientLocation }) => {
                 });
               }}
             >
-              Part {romanNumeralFromDecimal(idx + 1)}
+              Teil {romanNumeralFromDecimal(idx + 1)}
             </IdleGiftPart>
           );
         })}
@@ -161,7 +161,7 @@ const GiftPartsManager: React.FC<Props> = ({ gift, recipientLocation }) => {
                 status: { kind: 'OnePartOpen', activePart: part },
               })}
             >
-              Part {romanNumeralFromDecimal(idx + 1)}
+              Teil {romanNumeralFromDecimal(idx + 1)}
             </IdleGiftPart>
           );
         })}
@@ -199,4 +199,3 @@ function nextGiftPart(gift: Gift, currentPart: GiftPart): GiftPart | null {
 export {
   GiftPartsManager,
 };
-

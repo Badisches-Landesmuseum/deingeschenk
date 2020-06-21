@@ -210,9 +210,9 @@ const ReceivingPartContent: React.FC<PartContentProps> = (props) => {
       case 'reveal-preview2':
         return (
           <>
-            {haveClue && <Button onClick={gotoGiveClueSearch}>Show clue</Button>}
-            {!haveClue && <Button onClick={gotoGiveHelp}>Help</Button>}
-            <Button onClick={gotoHereYouGo} primary={true}>Found it</Button>
+            {haveClue && <Button onClick={gotoGiveClueSearch}>Hinweis?</Button>}
+            {!haveClue && <Button onClick={gotoGiveHelp}>Hilfe</Button>}
+            <Button onClick={gotoHereYouGo} primary={true}>Gefunden!</Button>
           </>
         );
 
@@ -226,7 +226,7 @@ const ReceivingPartContent: React.FC<PartContentProps> = (props) => {
                 gotoGiveHelp();
               }}
             >
-              More help
+              Mehr Hilfe
             </Button>
           </>
         );
@@ -252,14 +252,14 @@ const ReceivingPartContent: React.FC<PartContentProps> = (props) => {
           <WaitThenShow
             wait={1}
           >
-            <Button onClick={handleContinue} primary={true}>Continue</Button>
+            <Button onClick={handleContinue} primary={true}>Weiter</Button>
           </WaitThenShow>
         );
       case 'play-audio':
 
         // Different text based on gift part
         // Note: This is never shown on the last part, so no need to consider that case
-        const openPartText = (props.giftPartIndex === 1) ? 'Open last part' : 'Open part two';
+        const openPartText = (props.giftPartIndex === 1) ? 'Öffne letzten Teil' : 'Öffne Teil zwei';
 
         return (
           <>
@@ -267,7 +267,7 @@ const ReceivingPartContent: React.FC<PartContentProps> = (props) => {
               <Button onClick={gotoEndOfGiftPart} primary={true}>{openPartText}</Button>
             )}
             {audioPlaybackComplete && !furtherPart && (
-              <Button onClick={gotoEndOfGiftPart} primary={true}>Done</Button>
+              <Button onClick={gotoEndOfGiftPart} primary={true}>Fertig</Button>
             )}
           </>
         );
@@ -286,7 +286,7 @@ const ReceivingPartContent: React.FC<PartContentProps> = (props) => {
       case 'outro':
         return (
           <>
-            {outroAudioPlaybackFinished && <Button primary={true} onClick={handleOutroContinue}>Done</Button>}
+            {outroAudioPlaybackFinished && <Button primary={true} onClick={handleOutroContinue}>Erledigt</Button>}
           </>
         );
       default :
@@ -305,12 +305,12 @@ const ReceivingPartContent: React.FC<PartContentProps> = (props) => {
         case 0 :
           // Text changes based on gift count
           return giftPartCount === 1
-            ? `This is a sneak peek \n of your gift`
-            : `This is a sneak peek \n of the first object in your gift. Do you know where to look?`;
+            ? `Das ist eine Vorschau \n von deinem Geschenk`
+            : `Das ist eine Vorschau \n auf das erste Objekt aus deinem Geschenk. Weißt du, wo es zu finden ist?`;
         case 1 :
-          return 'Here’s a look \n at the second object in your gift. Take a wander to find it';
+          return 'So sieht das zweite \n Objekt aus deinem Geschenk aus. Mach dich auf die Suche.';
         case 2 :
-          return 'Here’s a glimpse of your last object. Time to see if you can track it down';
+          return 'Hier ist ein Blick auf dein letztes Objekt. Kannst du es aufspüren?';
         default :
           return '';
       }
@@ -320,12 +320,12 @@ const ReceivingPartContent: React.FC<PartContentProps> = (props) => {
 
       const part =
         giftPartCount === 1 ? '' : // Nothing for one part gift
-        props.giftPartIndex === 0 ? 'first' :
-        props.giftPartIndex === 1 ? 'second' :
-        props.giftPartIndex === 2 ? 'third' :
+        props.giftPartIndex === 0 ? 'erste' :
+        props.giftPartIndex === 1 ? 'zweite' :
+        props.giftPartIndex === 2 ? 'dritte' :
         '';
 
-      return `Here’s the ${part} object that ${giftSenderName} chose for you`;
+      return `Hier ist das ${part} Objekt, dass ${giftSenderName} für dich ausgesucht hat.`;
     }
 
   }
@@ -333,11 +333,11 @@ const ReceivingPartContent: React.FC<PartContentProps> = (props) => {
   function getNeedHelpText() {
     switch (props.giftPartIndex) {
       case 0 :
-        return 'Stuck? Try asking someone in the museum';
+        return 'Kommst du nicht weiter? Frage mal jemanden vom Museum.';
       case 1 :
-        return 'Oh dear. Find someone in the museum to help?';
+        return 'Oje! Vielleicht kann dir eine Aufsicht helfen?';
       case 2 :
-        return 'The last one! Ask someone in the museum';
+        return 'Endspurt! Frage jemanden im Museum.';
       default :
         return '';
     }
@@ -346,11 +346,11 @@ const ReceivingPartContent: React.FC<PartContentProps> = (props) => {
   function getPreFindText() {
     switch (props.giftPartIndex) {
       case 0 :
-        return 'Well done!';
+        return 'Gut gemacht!';
       case 1 :
-        return 'Good work!';
+        return 'Weiter so!';
       case 2 :
-        return 'Excellent!';
+        return 'Ausgezeichnet!';
       default :
         return '';
     }
@@ -360,12 +360,11 @@ const ReceivingPartContent: React.FC<PartContentProps> = (props) => {
     switch (props.giftPartIndex) {
       case 0 :
         // Text changes based on gift count and sender name
-        const partCount = giftPartCount > 1 ? 'first' : '';
-        return `${giftSenderName}’s ${partCount} message for you...`;
+        return giftPartCount > 1 ? `Deine erste Nachricht von ${giftSenderName}...` : `Deine Nachricht von ${giftSenderName}...`;
       case 1 :
-        return `${giftSenderName}’s message to you...`;
+        return `Deine zweite Nachricht von ${giftSenderName}...`;
       case 2 :
-        return `${giftSenderName}’s final message to you...`;
+        return `Die letzte Nachricht von ${giftSenderName} für dich...`;
       default :
         return '';
     }
@@ -476,7 +475,7 @@ const ReceivingPartContent: React.FC<PartContentProps> = (props) => {
                 <SvgIconDone />
               </DoneIconWrap>
 
-              <PanelText>You’ve unwrapped the whole gift</PanelText>
+              <PanelText>Du hast das ganze Geschenk ausgepackt</PanelText>
 
             </PanelPrompt>
 
@@ -489,8 +488,7 @@ const ReceivingPartContent: React.FC<PartContentProps> = (props) => {
 
         {section === 'outro' && (
           <AudioPlayer
-            message={`Ready for
-            the last bit?`}
+            message={`Bereit für einen Nachklang?`}
             src={getOutroAudioFile()}
             forwardButtonType={'go-to-end'}
             giftId={props.gift.id}

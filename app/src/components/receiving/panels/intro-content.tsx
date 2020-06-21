@@ -91,7 +91,7 @@ const ReceivingIntroContent: React.FC<Props> = (props) => {
       <PanelContent>
 
         <AudioPlayer
-          message={'Start here...'}
+          message={'Beginne hier...'}
           src={audioFile}
           forwardButtonType={'go-to-end'}
           giftId={props.gift.id}
@@ -104,7 +104,7 @@ const ReceivingIntroContent: React.FC<Props> = (props) => {
       <PanelButtons>
         {/* todo: reinstate this */}
         {/* {props.audioIntroPlayed && <Button onClick={handleContinue}>Skip</Button>} */}
-        {audioPlaybackFinished && <Button onClick={handleContinue} primary={true}>Continue</Button>}
+        {audioPlaybackFinished && <Button onClick={handleContinue} primary={true}>Weiter</Button>}
       </PanelButtons>
 
     </Panel>

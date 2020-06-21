@@ -40,8 +40,8 @@ export const LandscapeMessage: React.FC = () => {
   if (isMobileDevice() && isLandscape) {
     return (
       <StyledMessage>
-        <p>This app only works in portrait mode.</p>
-        <p>Please rotate your device</p>
+        <p>Diese App funktioniert nur im Portrait-Modus.</p>
+        <p>Bitte drehe dein Gerät.</p>
         <div style={{fontSize: '5rem'}}>📱</div>
       </StyledMessage>
     );

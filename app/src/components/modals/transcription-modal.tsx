@@ -60,7 +60,7 @@ const TranscriptionModal: React.FC<Props> = ({ onClose, children }) => {
         <SvgCloseCircle />
       </CloseButton>
       <Inner>
-        <h2>Audio transcript</h2>
+        <h2>Audio-Transkript</h2>
         {children}
       </Inner>
     </Outer>

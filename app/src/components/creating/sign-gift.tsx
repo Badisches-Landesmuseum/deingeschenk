@@ -16,7 +16,7 @@ interface Props {
   onComplete: (senderName: string) => void;
 }
 
-export const SignGift: React.FC<Props> = ({ onComplete }) => {
+export const SignGift: React.FC<Props> = ({ onComplete, recipientName }) => {
 
   // State
   const [showingEnterName, setShowingEnterName] = useState(false);
@@ -26,25 +26,25 @@ export const SignGift: React.FC<Props> = ({ onComplete }) => {
 
       {showingEnterName && (
         <TextInputModal
-          placeHolder='Write your first name'
+          placeHolder='Schreibe deinen Vornamen'
           onSaveClick={(name) => { onComplete(name); }}
           onCancelClick={() => { setShowingEnterName(false); }}
         />
       )}
 
       <Panel>
-        <PanelTitle>Finish your gift</PanelTitle>
-        <PanelSubTitle>Sign it</PanelSubTitle>
+        <PanelTitle>Stelle dein Geschenk fertig</PanelTitle>
+        <PanelSubTitle>Unterzeichne es</PanelSubTitle>
         <PanelContent>
           <PanelPrompt
-            text={`Now say who
-              your gift is from...`}
+            text={`Lass ${recipientName} wissen, von wem
+              das Geschenk kommt...`}
             background={'transparent-black'}
             onClick={() => { setShowingEnterName(true); }}
           />
         </PanelContent>
         <PanelButtons>
-          <Button onClick={() => { setShowingEnterName(true); }} primary={true}>Write your first name</Button>
+          <Button onClick={() => { setShowingEnterName(true); }} primary={true}>Schreibe deinen Vornamen</Button>
         </PanelButtons>
       </Panel>
 

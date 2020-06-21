@@ -40,12 +40,12 @@ const SignIn: React.FC<Props> = ({ onCloseButtonClick }) => {
 
     // Todo: Check for 200 or 401 response from API
 
-    setMessage(`Checking...`);
+    setMessage(`Überprüfe...`);
     setEmailSent(true);
 
     // Contact the API, and show a response
     setTimeout( () => {
-      setMessage('Check your emails for instructions.');
+      setMessage('Check deine Mails für weitere Anweisungen.');
     }, 2000);
 
   }
@@ -59,12 +59,12 @@ const SignIn: React.FC<Props> = ({ onCloseButtonClick }) => {
 
       <Panel>
 
-        <PanelTitle>Sign in</PanelTitle>
+        <PanelTitle>Anmelden</PanelTitle>
 
         <PanelContent>
 
           <TextInput
-            placeHolder={'Your email address'}
+            placeHolder={'Deine E-Mail-Adresse'}
             onTextChanged={setEmailAddress}
             onEnterPressed={() => {handleSignIn(emailAddress); }}
           />
@@ -75,7 +75,7 @@ const SignIn: React.FC<Props> = ({ onCloseButtonClick }) => {
 
         <PanelButtons>
           {emailAddress && !emailSent &&
-            <Button onClick={() => handleSignIn(emailAddress)} primary={true}>Sign in</Button>
+            <Button onClick={() => handleSignIn(emailAddress)} primary={true}>Anmelden</Button>
           }
         </PanelButtons>
 

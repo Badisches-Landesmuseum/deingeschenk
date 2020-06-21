@@ -152,13 +152,13 @@ class ReceiveGift extends React.PureComponent<Props, State> {
       <Panel>
         <PanelContent>
           <PanelPrompt
-            text={`Open it now or save your gift for when you're at the museum?`}
+            text={`Willst du dein Geschenk jetzt öffnen oder später, wenn du im Musem bist?`}
             background={'transparent-black'}
           />
         </PanelContent>
         <PanelButtons>
-          <Button onClick={this.handleOpenAnywayClicked} primary={true}>Open it now</Button>
-          <Button onClick={this.handleSaveForLaterClicked}>Save it</Button>
+          <Button onClick={this.handleOpenAnywayClicked} primary={true}>Jetzt öffnen</Button>
+          <Button onClick={this.handleSaveForLaterClicked}>Später öffnen</Button>
         </PanelButtons>
       </Panel>
     );
@@ -207,13 +207,13 @@ class ReceiveGift extends React.PureComponent<Props, State> {
               showLogo={false}
               museumName={museumName}
             />
-            <MainTitle>Here's your gift from</MainTitle>
+            <MainTitle>Hier ist dein Geschenk von</MainTitle>
             <MuseumName>{this.props.gift.senderName}</MuseumName>
           </>
         )}
         {headerSize === 'small' && (
           <ScreenHeader
-            postSubTitle={`Your gift from`}
+            postSubTitle={`Dein Geschenk von`}
             title={this.props.gift.senderName}
             showLogo={false}
             background='white'
@@ -222,7 +222,7 @@ class ReceiveGift extends React.PureComponent<Props, State> {
         )}
         {headerSize === 'compact' && (
           <ScreenHeader
-            postSubTitle={`Your gift from`}
+            postSubTitle={`Dein Geschenk von`}
             title={this.props.gift.senderName}
             showLogo={false}
             background='white'

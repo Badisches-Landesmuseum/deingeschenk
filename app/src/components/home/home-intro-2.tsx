@@ -30,9 +30,7 @@ const HomeIntro2: React.FC<Props> = ({ onComplete }) => {
 
       <PanelContent topPosition='top-quarter'>
         <PanelPrompt
-          text='How about
-            with objects
-            from a museum?'
+          text='Auch schon mit Objekten aus einem Museum?'
           textColor='black'
           textSize={70}
           background='solid-white'

@@ -18,14 +18,14 @@ const CreateGiftScreen: React.FC = () => {
   // If this is an iOS device using Chrome prompt the user to use Safari, as they will have it
   if (isIosDeviceUsingChrome()) {
     return (
-      <UnsupportedDevice message='Please open Gift in Safari on this device' />
+      <UnsupportedDevice message='Bitte nutze Das Geschenk auf diesem Gerät in Safari.' />
     );
   }
 
   // If we can't record audio inform and force end
   if (!canUseAudioRecorder()) {
     return (
-      <UnsupportedDevice message={`Your phone doesn't seem to allow you to record audio, so you can't create a gift`} />
+      <UnsupportedDevice message={`Anscheinend erlaubt dein Gerät dir nicht, Audio aufzunehmen, also kannst du leider kein Geschenk erstellen.`} />
     );
   }
 
