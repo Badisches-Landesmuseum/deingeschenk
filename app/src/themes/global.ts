@@ -25,10 +25,10 @@ const global = {
   },
   fonts: {
     body: {
-      family: "'Nunito', serif;",
+      family: "'open-sans', sans-serif;",
     },
     title: {
-      family: "'Playfair Display', serif;",
+      family: "'utopia-std', serif;",
       normal: 400,
       bold: 700,
       black: 900,
@@ -109,7 +109,7 @@ const GlobalStyles = createGlobalStyle`
 
   /* Text areas */
   input[type="text"], input[type="email"], input[type="password"], textarea {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'open-sans', sans-serif;
     width: 100%;
     max-width: 95%;
     background: white;
@@ -142,7 +142,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'open-sans', sans-serif;
     background-color: ${global.colour.darkGrey};
     color: black;
     -webkit-font-smoothing: antialiased;

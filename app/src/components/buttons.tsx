@@ -56,7 +56,7 @@ const buttonStyles = css<ButtonProps>`
   margin: 0;
   padding: ${buttonPaddingVh}vh 1%;
   text-align: center;
-  font-style: italic;
+  font-style: normal;
   flex-grow: 1;
   flex-basis: 0;
   opacity: 0.95;
