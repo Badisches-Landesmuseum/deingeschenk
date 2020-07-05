@@ -31,13 +31,13 @@ const ChooseLocation: React.FC<ChooseLocationProps> = (props) => {
     <Panel>
       <PanelContent topPosition='top-quarter'>
         <PanelPrompt
-          text={`Are you at ${props.museumName} right now?`}
+          text={`Befindest du dich gerade im Badischen Landesmuseum?`}
           background={'transparent-black'}
         />
       </PanelContent>
       <PanelButtons>
-        <Button onClick={handleNotAtMuseum}>No</Button>
-        <Button onClick={handleAtMuseum} primary={true}>Yes</Button>
+        <Button onClick={handleNotAtMuseum}>Nein</Button>
+        <Button onClick={handleAtMuseum} primary={true}>Ja</Button>
       </PanelButtons>
     </Panel>
   );
