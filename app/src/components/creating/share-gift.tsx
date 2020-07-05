@@ -117,16 +117,16 @@ export const ShareGift: React.FC<ShareGiftProps> = ({
 
   // String templates
   const shareText = `Hier ist ein Geschenk, das ich für dich im Badischen Landesmuseum gemacht habe... `;
-  const emailText = `mailto:?subject=Ein Geschenk von mir aus dem Badischen Landesmuseum &body=Hallo ${recipientName},
+  const emailText = `mailto:?subject=Ein Geschenk von mir aus dem Badischen Landesmuseum&body=Hallo ${recipientName},
 
-  Hier ist ein Geschenk, das ich für dich im Badischen Landesmuseum gemacht habe. Klicke auf den Link um es zu öffnen!
+Hier ist ein Geschenk, das ich für dich im Badischen Landesmuseum gemacht habe. Klicke auf den Link um es zu öffnen!
 
-  ${url}
+${url}
 
-  ${senderName}`;
+${senderName}`;
 
   // Prepare all of the URLS
-  const emailLink = encodeURI(emailText);
+  const emailLink = encodeURI(emailText).replace(/\,/g,"%2C");
   const fbMessengerLink = encodeURI(`fb-messenger://share/?link=${url}`);
   const whatsAppsLink = encodeURI(`whatsapp://send?text=${shareText} ${url}`);
 
