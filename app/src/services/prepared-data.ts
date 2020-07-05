@@ -80,23 +80,23 @@ preparedGifts.set(uuidv5('https://api.thegift.app/gift/munch-museum-1', uuidv5.U
 preparedGifts.set(uuidv5('https://api.thegift.app/gift/mpu-1', uuidv5.URL), {
   id: uuidv5('https://api.thegift.app/gift/mpu-1', uuidv5.URL),
   kind: 'MuseumGift',
-  museumId: uuidv5('https://api.thegift.app/museum/mpu', uuidv5.URL),
+  museumId: uuidv5('https://landesmuseum.de', uuidv5.URL),
   senderName: 'Badisches Landesmuseum',
   recipientName: 'Besucher',
   parts: [
     {
-      photo: 'https://bt-gift.s3.eu-west-2.amazonaws.com/static-content/curated/mpu-bb61f6c8/part-1-photo.6b35a49f.jpg',
-      note: 'https://bt-gift.s3.eu-west-2.amazonaws.com/static-content/curated/mpu-bb61f6c8/part-1-note.e53958d8.m4a',
+      photo: 'https://dasgeschenk.s3.eu-central-1.amazonaws.com/Museumsgeschenk/Objekt+1.jpg',
+      note: 'https://dasgeschenk.s3.eu-central-1.amazonaws.com/Museumsgeschenk/Objekt+1.mp3',
       clue: 'Search for a large wooden ceiling in the exhibition room No. 1 on second floor',
     },
     {
-      photo: 'https://bt-gift.s3.eu-west-2.amazonaws.com/static-content/curated/mpu-bb61f6c8/part-2-photo.4d73eb46.jpg',
-      note: 'https://bt-gift.s3.eu-west-2.amazonaws.com/static-content/curated/mpu-bb61f6c8/part-2-note.d8f65955.m4a',
+      photo: 'https://dasgeschenk.s3.eu-central-1.amazonaws.com/Museumsgeschenk/Objekt+2.jpg',
+      note: 'https://dasgeschenk.s3.eu-central-1.amazonaws.com/Museumsgeschenk/Objekt+2.mp3',
       clue: 'Look inside the built in glass case in the exhibition room No. 4 on second floor',
     },
     {
-      photo: 'https://bt-gift.s3.eu-west-2.amazonaws.com/static-content/curated/mpu-bb61f6c8/part-3-photo.44bf6d07.jpg',
-      note: 'https://bt-gift.s3.eu-west-2.amazonaws.com/static-content/curated/mpu-bb61f6c8/part-3-note.c8713912.m4a',
+      photo: 'https://dasgeschenk.s3.eu-central-1.amazonaws.com/Museumsgeschenk/Objekt+3.jpeg',
+      note: 'https://dasgeschenk.s3.eu-central-1.amazonaws.com/Museumsgeschenk/Objekt+3.mp3',
       clue: 'Find this on a mannequin in the exhibition room No. 5 on second floor',
     },
   ],

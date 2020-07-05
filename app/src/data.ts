@@ -159,7 +159,7 @@ const mpu: Museum = {
  */
 // tslint:disable max-line-length
 const blm: Museum = {
-  id: uuidv5('https://api.thegift.app/museum/mpu', uuidv5.URL), // TODO
+  id: uuidv5('https://landesmuseum.de', uuidv5.URL),
   slug: 'blm',
   name: 'Badisches Landesmuseum',
   curatedGiftId: uuidv5('https://api.thegift.app/gift/mpu-1', uuidv5.URL), // TODO
