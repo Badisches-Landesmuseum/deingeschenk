@@ -10,8 +10,8 @@ export const HelpContent: React.FC = () => (
 
 <h1>Hilfe</h1>
 <p></p>
-<h5 id="was-ist-das-geschenk">Was ist Das Geschenk?</h5>
-<p>Das Geschenk lädt dich ein, einer besonderen Person das perfekte digitale Geschenk auf deinem Smartphone zu machen. Wähle interessante Objekte aus, zeichne persönliche Nachrichten zu ihnen auf und schicke es ab.</p>
+<h5 id="was-ist-das-geschenk">Was ist Dein Geschenk?</h5>
+<p>Dein Geschenk lädt dich ein, einer besonderen Person das perfekte digitale Geschenk auf deinem Smartphone zu machen. Wähle interessante Objekte aus, zeichne persönliche Nachrichten zu ihnen auf und schicke es ab.</p>
 <p></p>
 <h5 id="wer-kann-ein-geschenk-machen">Wer kann ein Geschenk machen?</h5>
 <p>Jede(r). Bringe einfach dein Smartphone mit ins Museum.</p>
@@ -26,22 +26,22 @@ export const HelpContent: React.FC = () => (
 <p>Du brauchst nur ein Smartphone oder ein Tablet.</p>
 <p></p>
 <h5 id="welche-geräte-kann-ich-benutzen">Welche Geräte kann ich benutzen?</h5>
-<p>Das Geschenk ist so konzipiert, dass es auf den meisten modernen Smartphones läuft. Es wurde auf Geräten mit Android 6.0 (oder neuer) und in Safari auf iOS11 (oder neuer) getestet. Du kannst Geschenke auch auf einem Laptop oder Desktop-Computer öffnen (aber keine Geschenke erstellen).</p>
+<p>Dein Geschenk ist so konzipiert, dass es auf den meisten modernen Smartphones läuft. Es wurde auf Geräten mit Android 6.0 (oder neuer) und in Safari auf iOS11 (oder neuer) getestet. Du kannst Geschenke auch auf einem Laptop oder Desktop-Computer öffnen (aber keine Geschenke erstellen).</p>
 <p></p>
 <h5 id="welche-geräte-werden-nicht-unterstützt">Welche Geräte werden nicht unterstützt?</h5>
-<p>Chrome auf iOS wird derzeit nicht unterstützt. Ältere Android-Geräte können ebenfalls Probleme beim Laden von Das Geschenk haben.</p>
+<p>Chrome auf iOS wird derzeit nicht unterstützt. Ältere Android-Geräte können ebenfalls Probleme beim Laden von Dein Geschenk haben.</p>
 <p></p>
 <h5 id="muss-ich-eine-app-installieren">Muss ich eine App installieren?</h5>
-<p>Nein. Das Geschenk läuft vollständig im Webbrowser deines Telefons, sodass du keine App herunterladen musst.</p>
+<p>Nein. Dein Geschenk läuft vollständig im Webbrowser deines Telefons, sodass du keine App herunterladen musst.</p>
 <p></p>
 <h5 id="muss-ich-kopfhörer-verwenden">Muss ich Kopfhörer verwenden?</h5>
-<p>Nein. Du kannst den Lautsprecher deines Telefons benutzen, um Das Geschenk während deines Museumsbesuchs anzuhören. Einige drahtlose Kopfhörer werden nicht unterstützt.</p>
+<p>Nein. Du kannst den Lautsprecher deines Telefons benutzen, um Dein Geschenk während deines Museumsbesuchs anzuhören. Einige drahtlose Kopfhörer werden nicht unterstützt.</p>
 <p></p>
 <h5 id="warum-kann-ich-keine-nachrichten-aufzeichnen">Warum kann ich keine Nachrichten aufzeichnen?</h5>
 <p>Einige Headsets und Bluetooth-Kopfhörer sind mit der Sprachaufzeichnung über den Browser deines Smartphones nicht kompatibel. Wenn du ein Headset oder einen Kopfhörer verwendest, versuche, diese zum Aufnehmen deiner Nachrichten abzuschalten. Wenn die Aufnahme überhaupt nicht gestartet werden kann, überprüfe die Mikrofonberechtigungen für deinen Browser in den Einstellungen deines Smartphones.</p>
 <p></p>
 <h5 id="muss-ich-wlan-benutzen">Muss ich WLAN benutzen?</h5>
-<p>Für die Nutzung von Das Geschenk benötigst du eine Internetverbindung auf deinem Telefon. Diese kann entweder WLAN oder mobile Daten verwenden.</p>
+<p>Für die Nutzung von Dein Geschenk benötigst du eine Internetverbindung auf deinem Telefon. Diese kann entweder WLAN oder mobile Daten verwenden.</p>
 <p></p>
 <p></p>
 <h2 id="ein-geschenk-erstellen">Ein Geschenk erstellen</h2>
@@ -99,7 +99,7 @@ export const HelpContent: React.FC = () => (
 <p>Das Badische Landesmuseum wird deine persönlichen Daten ohne deine Zustimmung nicht an Dritte weitergeben. Um jedoch Geschenke zu teilen, geben die Nutzer*innen dem Badischen Landesmuseum eine Lizenz zur Veröffentlichung von Beiträgen, einschließlich Fotos und Audio-Nachrichten im Namen der Nutzer*in. Unter dieser Lizenz dürfen diese Beiträge – in anonymisierter Form – auch dazu verwendet werden, das Projekt zu dokumentieren und die Nutzung der Website zu untersuchen.</p>
 <p>Das Badische Landesmuseum sammelt auch anonymisierte Daten aus der Nutzung der Website, um deren Service zu verbessern.</p>
 <p></p>
-<h5 id="warum-braucht-das-geschenk-zugang-zu-meiner-kamera-und-meinem-mikrofon">Warum braucht Das Geschenk Zugang zu meiner Kamera und meinem Mikrofon?</h5>
+<h5 id="warum-braucht-das-geschenk-zugang-zu-meiner-kamera-und-meinem-mikrofon">Warum braucht Dein Geschenk Zugang zu meiner Kamera und meinem Mikrofon?</h5>
 <p>Du machst Fotos und nimmst Sprachnachrichten auf, um Geschenke zu erstellen. Dazu benötigt dein Browser die Erlaubnis, auf die Kamera und das Mikrofon auf deinem Gerät zuzugreifen.</p>
 <p></p>
 <h5 id="wie-viele-daten-werden-für-geschenke-benötigt">Wie viele Daten werden für Geschenke benötigt?</h5>
@@ -114,20 +114,20 @@ export const HelpContent: React.FC = () => (
 <p></p>
 <h2 id="barrierefreiheit-inklusion">Barrierefreiheit &amp; Inklusion</h2>
 <p></p>
-<h5 id="nutzt-das-geschenk-ton">Nutzt Das Geschenk Ton?</h5>
+<h5 id="nutzt-das-geschenk-ton">Nutzt Dein Geschenk Ton?</h5>
 <p>Ja. Geschenke, die du erhältst, enthalten Audio-Nachrichten von den Absender*innen. Die Anwendung verfügt auch über eine*n Erzähler*in, um dich durch das Erstellen und Öffnen von Geschenken zu führen.</p>
 <p></p>
-<h5 id="ich-habe-eine-hörbeeinträchtigung.-kann-ich-das-geschenk-trotzdem-nutzen">Ich habe eine Hörbeeinträchtigung. Kann ich Das Geschenk trotzdem nutzen?</h5>
+<h5 id="ich-habe-eine-hörbeeinträchtigung.-kann-ich-das-geschenk-trotzdem-nutzen">Ich habe eine Hörbeeinträchtigung. Kann ich Dein Geschenk trotzdem nutzen?</h5>
 <p>Geschenke enthalten Audiobotschaften, die du dir anhören musst, wenn die Geschenke geöffnet werden. Wenn du Geschenke erstellst, musst du Audiobotschaften zu jedem Objekt mit deinem Smartphone aufnehmen. Transkriptionen der Audionachricht des Erzählers werden durchgehend zur Verfügung gestellt.</p>
 <p></p>
-<h5 id="ich-habe-eine-sehbeeinträchtigung.-kann-ich-das-geschenk-trotzdem-verwenden">Ich habe eine Sehbeeinträchtigung. Kann ich Das Geschenk trotzdem verwenden?</h5>
+<h5 id="ich-habe-eine-sehbeeinträchtigung.-kann-ich-das-geschenk-trotzdem-verwenden">Ich habe eine Sehbeeinträchtigung. Kann ich Dein Geschenk trotzdem verwenden?</h5>
 <p>In der Benutzeroberfläche werden Fotos verwendet, um die Objekte in Geschenken zu identifizieren. Diese werden neben Texthinweisen angezeigt, um das Auffinden der Exponate zu erleichtern. Es wird dir empfohlen, einen Mitarbeiter zu fragen, wenn du ein Objekt aus deinem Geschenk nicht finden kannst. Wenn du Geschenke erstellst, wirst du auch gebeten, Fotos von den Exponaten zu machen, die du auswählen möchtest.</p>
 <p></p>
-<h5 id="ich-habe-probleme-bei-der-verwendung-von-das-geschenk.-was-kann-ich-tun">Ich habe Probleme bei der Verwendung von ‚Das Geschenk‘. Was kann ich tun?</h5>
-<p>Bitte teile uns deine Erfahrungen oder Probleme bei der Verwendung von ‚Das Geschenk‘ mit, indem du im Hauptmenü „Feedback“ wählst. Wir freuen uns auf deine Rückmeldungen und werden unser Bestes tun, die Anwendung zu optimieren.</p>
+<h5 id="ich-habe-probleme-bei-der-verwendung-von-das-geschenk.-was-kann-ich-tun">Ich habe Probleme bei der Verwendung von ‚Dein Geschenk‘. Was kann ich tun?</h5>
+<p>Bitte teile uns deine Erfahrungen oder Probleme bei der Verwendung von ‚Dein Geschenk‘ mit, indem du im Hauptmenü „Feedback“ wählst. Wir freuen uns auf deine Rückmeldungen und werden unser Bestes tun, die Anwendung zu optimieren.</p>
 <p></p>
 <p></p>
-<h2 id="wer-hat-das-geschenk-entwickelt-und-warum">Wer hat ‚Das Geschenk‘ entwickelt – und warum?</h2>
+<h2 id="wer-hat-das-geschenk-entwickelt-und-warum">Wer hat ‚Dein Geschenk‘ entwickelt – und warum?</h2>
 <p></p>
 <h5 id="wer-hat-das-geschenk-entwickelt">Wer hat das Geschenk entwickelt?</h5>
 <p>Die Anwendung ‚The Gift‘ wurde von der britischen Künstlergruppe Blast Theory im Rahmen eines dreijährigen Forschungsprojekts entwickelt, das durch das Forschungs- und Innovationsprogramm Horizont 2020 der Europäischen Union im Rahmen der Zuschussvereinbarung Nr. 727040 finanziert wurde. Es ist eine Zusammenarbeit mit der IT-Abteilung Universität Kopenhagen, der Universität von Nottingham, der Universität Uppsala, Blast Theory, Next Game, der Europeana Foundation und Culture24. Weitere Informationen: <a href="http://www.gifting.digital/">www.gifting.digital</a></p>
@@ -136,8 +136,8 @@ export const HelpContent: React.FC = () => (
 <h5 id="lizenz">Lizenz</h5>
 <p>Die Anwendung ist Open Source und unter den Bedingungen der <a href="https://opensource.org/licenses/MIT">MIT-Lizenz</a> lizenziert.</p>
 <p></p>
-<h5 id="warum-gibt-es-das-geschenk-im-badischen-landesmuseum">Warum gibt es Das Geschenk im Badischen Landesmuseum?</h5>
-<p>Das Geschenk öffnet digitale Wege ins Museum und zu den Objekten der Sammlungen. Es ist eine neue Art, Exponate mit den Augen eines Menschen zu erleben, der dir besonders am Herzen liegt.</p>
+<h5 id="warum-gibt-es-das-geschenk-im-badischen-landesmuseum">Warum gibt es Dein Geschenk im Badischen Landesmuseum?</h5>
+<p>Dein Geschenk öffnet digitale Wege ins Museum und zu den Objekten der Sammlungen. Es ist eine neue Art, Exponate mit den Augen eines Menschen zu erleben, der dir besonders am Herzen liegt.</p>
 <p></p>
 <h5 id="wie-gebe-ich-feedback-zu-meinen-erfahrungen-mit-der-anwendung">Wie gebe ich Feedback zu meinen Erfahrungen mit der Anwendung?</h5>
 <p>Um uns über deine Erfahrung zu berichten, wähle im Hauptmenü „Feedback“. Wir freuen uns über deine Eindrücke.</p>

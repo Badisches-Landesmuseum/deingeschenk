@@ -100,10 +100,10 @@ const RecordPanel: React.FC<{
                 : (audioRecorder.state === 'error') ? audioRecorder.reset
                 : noop;
 
-  const button = (audioRecorder.state === 'recording') ? (<Button onClick={handleStopRecord}>Stop recording</Button>)
-               : (audioRecorder.state === 'processing') ? (<Button onClick={handleStopRecord}>Stop recording</Button>)
-               : (audioRecorder.state === 'error') ? (<Button onClick={onClick}>Try again</Button>)
-               : (<Button onClick={handleStartRecord} primary={true}>Start recording</Button>);
+  const button = (audioRecorder.state === 'recording') ? (<Button onClick={handleStopRecord}>Aufnahme stoppen</Button>)
+               : (audioRecorder.state === 'processing') ? (<Button onClick={handleStopRecord}>Aufnahme stoppen</Button>)
+               : (audioRecorder.state === 'error') ? (<Button onClick={onClick}>Erneut versuchen</Button>)
+               : (<Button onClick={handleStartRecord} primary={true}>Aufnahme beginnen</Button>);
 
 
   function handleStartRecord() {

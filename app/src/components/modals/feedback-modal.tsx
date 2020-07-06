@@ -53,7 +53,7 @@ const FeedbackModal: React.FC<Props> = ({ feedbackUrl, feedbackText, onFinished 
 
   // Use feedbackText if provided, else fallback to default copy
   const mainText = feedbackText || `
-    Wir würden sehr gerne deine Meinung hören, um Das Geschenk weiter zu verbessern. Wenn du 5 Minuten hast, bitte drücke auf Weiter
+    Wir würden sehr gerne deine Meinung hören, um Dein Geschenk weiter zu verbessern. Wenn du 5 Minuten hast, bitte drücke auf Weiter
     um uns von deiner Erfahrung zu erzählen.
   `;
 
@@ -63,7 +63,7 @@ const FeedbackModal: React.FC<Props> = ({ feedbackUrl, feedbackText, onFinished 
 
         <Texts>
 
-          <TopText textSize={35}>Danke, dass du Das Geschenk benutzt!</TopText>
+          <TopText textSize={35}>Danke, dass du Dein Geschenk benutzt!</TopText>
 
           <MainText textSize={35}>{mainText}</MainText>
 

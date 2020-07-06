@@ -9,14 +9,11 @@ const BgBLM: React.FC = () => (
     <BgBLMStyle>
       <img src={require('../assets/image/bg-blm.jpeg')} />
     </BgBLMStyle>
-    {/*
+    {
     <TopLogoStyle>
-      <img src={require('../assets/svg/blm_logo_top.svg')} />
+      <img src={require('../assets/svg/blm_logo.svg')} />
     </TopLogoStyle>
-    <BottomLogoStyle>
-      <img src={require('../assets/svg/blm_logo_bottom.svg')} />
-    </BottomLogoStyle>
-    */}
+    }
   </div>
 );
 
@@ -36,11 +33,11 @@ const BgBLMStyle = styled.div`
 
 const TopLogoStyle = styled.div`
   position: absolute;
-  top: 10%;
+  top: 3%;
   left: 5%;
   z-index: 0;
-  width: 30%;
-  height: 30%;
+  width: 18%;
+  height: 18%;
   pointer-events: none;
 `;
 

@@ -62,7 +62,7 @@ const CreatingOutro: React.FC<Props> = ({ gift }) => {
       </PanelContent>
 
       <PanelButtons>
-        {audioPlaybackFinished && <Button primary={true} onClick={handleContinue}>Done</Button>}
+        {audioPlaybackFinished && <Button primary={true} onClick={handleContinue}>Geschafft!</Button>}
       </PanelButtons>
 
     </Panel>
