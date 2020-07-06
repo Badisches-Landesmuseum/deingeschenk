@@ -492,7 +492,7 @@ export const CreatingPartContent: React.FC<Props> = ({ recipientName, gift, onCo
   function renderPreClueMessage2() {
 
     const text = (giftPartIndex === 0)
-      ? `Beschreibe deine Umgebung... oder einen Anhaltspunkt für Nachfragen bei den Aufsichten.`
+      ? `Beschreibe deine Umgebung oder einen Anhaltspunkt für Nachfragen bei den Aufsichten.`
       : `Schreibe jetzt einen Hinweis, wo ${recipientName} das Objekt finden kann`;
 
     const next = () => { setShowingEnterClue(true); };

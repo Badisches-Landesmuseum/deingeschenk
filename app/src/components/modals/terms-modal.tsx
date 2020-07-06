@@ -54,18 +54,11 @@ interface Props {
 // tslint:disable max-line-length
 const DemoContent: React.FC = () => (
   <>
-    <TopText textSize={40}>This demo of Gift is hosted by<br/>&nbsp;
-      <a href='https://www.blasttheory.co.uk/' target='_blank'>Blast Theory</a>
+    <TopText textSize={40}>Dein Geschenk im Badischen Landesmuseum
     </TopText>
 
-    <MainText textSize={40}>
-      <a href='https://gifting.digital/gift-experience/' target='_blank'>Find out more about hosting Gift at your museum</a>
-    </MainText>
-
     <MainText textSize={35}>
-      Blast Theory store and process your data to deliver this service and to make improvements.
-      We will never share your personal information without your consent.
-      Please press agree to continue.  If you'd like to learn more:
+      Das Badische Landesmuseum speichert und verarbeitet deine Daten, um diesen Dienst anzubieten und zu verbessern. Wir werden persönliche Informationen ohne deine Zustimmung nicht an Dritte weitergeben. Bitte stimme zu, um fortzufahren. Wenn du mehr wissen willst:
     </MainText>
   </>
 );
@@ -73,14 +66,11 @@ const DemoContent: React.FC = () => (
 
 const StandardContent: React.FC = () => (
   <>
-    <TopText textSize={35}>Gift at {museum.name} is produced by&nbsp;
-      <a href='https://www.blasttheory.co.uk/' target='_blank'>Blast Theory</a>
+    <TopText textSize={35}>Dein Geschenk im Badischen Landesmuseum
     </TopText>
 
     <MainText textSize={35}>
-      Blast Theory store and process your data to deliver this service and to make improvements.
-      We will never share your personal information without your consent.
-      Please press agree to continue.  If you'd like to learn more:
+      Das Badische Landesmuseum speichert und verarbeitet deine Daten, um diesen Dienst anzubieten und zu verbessern. Wir werden persönliche Informationen ohne deine Zustimmung nicht an Dritte weitergeben. Bitte stimme zu, um fortzufahren. Wenn du mehr wissen willst:
     </MainText>
   </>
 );
@@ -97,7 +87,7 @@ const TermsModal: React.FC<Props> = ({ onAgreeClick, onShowTerms }) => {
           {innerContent}
 
           <TermsButton onClick={onShowTerms}>
-            <TextResize textSize={40}>Bitte lies unsere Nutzungsbedingungen &amp; Datenschutzerklärung</TextResize>
+            <TextResize textSize={40}>Lies unsere Nutzungsbedingungen &amp; Datenschutzerklärung</TextResize>
           </TermsButton>
 
         </Texts>

@@ -210,9 +210,9 @@ const ReceivingPartContent: React.FC<PartContentProps> = (props) => {
       case 'reveal-preview2':
         return (
           <>
-            {haveClue && <Button onClick={gotoGiveClueSearch}>Hinweis?</Button>}
+            {haveClue && <Button onClick={gotoGiveClueSearch}>Hinweis</Button>}
             {!haveClue && <Button onClick={gotoGiveHelp}>Hilfe</Button>}
-            <Button onClick={gotoHereYouGo} primary={true}>Gefunden!</Button>
+            <Button onClick={gotoHereYouGo} primary={true}>Gefunden</Button>
           </>
         );
 
@@ -259,7 +259,7 @@ const ReceivingPartContent: React.FC<PartContentProps> = (props) => {
 
         // Different text based on gift part
         // Note: This is never shown on the last part, so no need to consider that case
-        const openPartText = (props.giftPartIndex === 1) ? 'Öffne letzten Teil' : 'Öffne Teil zwei';
+        const openPartText = (props.giftPartIndex === 1) ? 'Öffne den letzten Teil' : 'Öffne Teil zwei';
 
         return (
           <>
@@ -286,7 +286,7 @@ const ReceivingPartContent: React.FC<PartContentProps> = (props) => {
       case 'outro':
         return (
           <>
-            {outroAudioPlaybackFinished && <Button primary={true} onClick={handleOutroContinue}>Erledigt</Button>}
+            {outroAudioPlaybackFinished && <Button primary={true} onClick={handleOutroContinue}>Fertig</Button>}
           </>
         );
       default :

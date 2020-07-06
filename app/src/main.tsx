@@ -43,14 +43,14 @@ export const Main: React.FC = () => {
   if (assetPreload.kind === 'running') { return (
     <Router history={history}>
       <LandscapeMessage />
-      <WorkingProgress text='Das Geschenk lädt...' />
+      <WorkingProgress text='Dein Geschenk lädt...' />
     </Router>
   ); }
 
   if (assetPreload.kind === 'failure') { return (
     <Router history={history}>
       <LandscapeMessage />
-      <ErrorMessage message="Entschuldigung, wir konnten die Assets von Das Geschenk nicht laden." />
+      <ErrorMessage message="Entschuldigung, wir konnten die Assets von Dein Geschenk nicht laden." />
     </Router>
   ); }
 

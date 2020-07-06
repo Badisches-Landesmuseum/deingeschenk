@@ -18,7 +18,7 @@ const CreateGiftScreen: React.FC = () => {
   // If this is an iOS device using Chrome prompt the user to use Safari, as they will have it
   if (isIosDeviceUsingChrome()) {
     return (
-      <UnsupportedDevice message='Bitte nutze Das Geschenk auf diesem Gerät in Safari.' />
+      <UnsupportedDevice message='Bitte nutze Dein Geschenk auf diesem Gerät in Safari.' />
     );
   }
 

@@ -33,12 +33,11 @@ export const SignGift: React.FC<Props> = ({ onComplete, recipientName }) => {
       )}
 
       <Panel>
-        <PanelTitle>Stelle dein Geschenk fertig</PanelTitle>
-        <PanelSubTitle>Unterzeichne es</PanelSubTitle>
+        <PanelTitle>Dein Geschenk fertigstellen</PanelTitle>
+        <PanelSubTitle>Signiere es</PanelSubTitle>
         <PanelContent>
           <PanelPrompt
-            text={`Lass ${recipientName} wissen, von wem
-              das Geschenk kommt...`}
+            text={`Lass ${recipientName} wissen, von wem das Geschenk kommt...`}
             background={'transparent-black'}
             onClick={() => { setShowingEnterName(true); }}
           />

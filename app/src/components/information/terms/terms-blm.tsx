@@ -10,7 +10,7 @@ export const TermsContent: React.FC = () => (
 
 <h1 id="nutzung-datenschutz">Nutzung &amp; Datenschutz</h1>
 <p></p>
-<p>Willkommen bei ‚Das Geschenk‘. Dieses Dokument legt die Bedingungen für die Nutzung der Anwendung und den Umgang mit Ihren Daten fest. Bitte lesen Sie dieses Dokument und wenn Sie Fragen haben, wenden Sie sich bitte an uns. Hier die wichtigsten Punkte:</p>
+<p>Willkommen bei ‚Dein Geschenk‘. Dieses Dokument legt die Bedingungen für die Nutzung der Anwendung und den Umgang mit Ihren Daten fest. Bitte lesen Sie dieses Dokument und wenn Sie Fragen haben, wenden Sie sich bitte an uns. Hier die wichtigsten Punkte:</p>
 <p></p>
 <h3 id="nutzeretikette">1. Nutzeretikette</h3>
 <p>Bitte unterlassen Sie es, beleidigende, anstößige oder anderweitig unangemessene Inhalte einzureichen.</p>
@@ -24,7 +24,7 @@ export const TermsContent: React.FC = () => (
 <p></p>
 <h2 id="nutzungsbedingungen">Nutzungsbedingungen</h2>
 <p></p>
-<p>Dieses Dokument bildet die Nutzungsbedingungen für die Dienstleistungen, die vom Badischen Landesmuseum (&quot;wir&quot;, &quot;unser&quot;) im Rahmen der ‚Das Geschenk‘- Anwendung und -Website (die &quot;Website&quot;) angeboten werden. Durch den Zugriff auf die Website oder deren Nutzung in irgendeiner Weise erklären sich die Nutzer („Nutzer*innen“, &quot;Nutzer&quot;, &quot;Nutzer&quot;, &quot;Sie&quot;, &quot;Ihr&quot;) mit der Einhaltung dieser Vereinbarung einverstanden.</p>
+<p>Dieses Dokument bildet die Nutzungsbedingungen für die Dienstleistungen, die vom Badischen Landesmuseum (&quot;wir&quot;, &quot;unser&quot;) im Rahmen der ‚Dein Geschenk‘- Anwendung und -Website (die &quot;Website&quot;) angeboten werden. Durch den Zugriff auf die Website oder deren Nutzung in irgendeiner Weise erklären sich die Nutzer („Nutzer*innen“, &quot;Nutzer&quot;, &quot;Nutzer&quot;, &quot;Sie&quot;, &quot;Ihr&quot;) mit der Einhaltung dieser Vereinbarung einverstanden.</p>
 <p>Informationen darüber, wie wir persönlich identifizierbare Informationen von unseren Nutzer*innen sammeln, verwenden und offenlegen, finden Sie in unserer <a href="https://www.landesmuseum.de/datenschutz"><em><em>Datenschutz</em></em></a><a href="https://www.landesmuseum.de/datenschutz"><em><em>erklärung</em></em></a> weiter unten. Durch die Nutzung der Website erklären Sie sich damit einverstanden, dass wir persönlich identifizierbare Informationen in Übereinstimmung mit der <a href="https://www.landesmuseum.de/datenschutz"><em><em>Datenschutz</em></em></a><a href="https://www.landesmuseum.de/datenschutz"><em><em>erklärung</em></em></a> sammeln, verwenden und offenlegen.</p>
 <p></p>
 <h3 id="annahme-und-änderungen-dieser-bedingungen">1. Annahme und Änderungen dieser Bedingungen</h3>
@@ -92,7 +92,7 @@ export const TermsContent: React.FC = () => (
 <p></p>
 <h2 id="datenschutzerklärung">Datenschutzerklärung</h2>
 <p></p>
-<p>Diese Datenschutzerklärung regelt die Art und Weise, in der das Badische Landesmuseum (&quot;wir&quot;, &quot;unser&quot;, &quot;wir&quot;) Informationen, die von Benutzern (jeweils ein &quot;Benutzer&quot;) der ‚Das Geschenk‘-Website (&quot;Website&quot;) gesammelt werden, sammelt, verwendet, pflegt und offenlegt. Diese Datenschutzerklärung (&quot;Erklärung&quot;) gilt für die Website und alle damit verbundenen Produkte und Dienstleistungen, die vom Badischen Landesmuseum als Teil des ‚Das Geschenk‘-Projekts (&quot;Projekt&quot;) angeboten werden.</p>
+<p>Diese Datenschutzerklärung regelt die Art und Weise, in der das Badische Landesmuseum (&quot;wir&quot;, &quot;unser&quot;, &quot;wir&quot;) Informationen, die von Benutzern (jeweils ein &quot;Benutzer&quot;) der ‚Dein Geschenk‘-Website (&quot;Website&quot;) gesammelt werden, sammelt, verwendet, pflegt und offenlegt. Diese Datenschutzerklärung (&quot;Erklärung&quot;) gilt für die Website und alle damit verbundenen Produkte und Dienstleistungen, die vom Badischen Landesmuseum als Teil des ‚Dein Geschenk‘-Projekts (&quot;Projekt&quot;) angeboten werden.</p>
 <p></p>
 <h3 id="ihre-daten">1. Ihre Daten</h3>
 <p>Informationen zur persönlichen Identifizierung</p>

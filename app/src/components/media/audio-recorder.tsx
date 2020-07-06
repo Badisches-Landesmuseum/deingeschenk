@@ -56,10 +56,10 @@ interface Props {
 
 export const AudioRecorder: React.FC<Props> = ({ status, text, onClick }) => {
 
-  const statusText = (status === 'recording') ? 'Now Recording'
-                   : (status === 'processing') ? 'Processing'
-                   : (status === 'preparing') ? 'Preparing'
-                   : (status === 'error') ? 'Error'
+  const statusText = (status === 'recording') ? 'Aufnahme läuft'
+                   : (status === 'processing') ? 'Verarbeiten'
+                   : (status === 'preparing') ? 'Vorbereiten'
+                   : (status === 'error') ? 'Fehler'
                    : '';
 
   const border: PanelRoundBorderStyle = (status === 'recording') ? 'solid-red'

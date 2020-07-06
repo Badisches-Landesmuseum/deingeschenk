@@ -204,13 +204,13 @@ export const HomeScreen: React.FC = () => {
       {/* Title */}
       {homeHeader && (
         <>
-          <MainTitleSmall>Das Geschenk</MainTitleSmall>
+          <MainTitleSmall>Dein Geschenk</MainTitleSmall>
           <MuseumNameSmall>{`im Badischen Landesmuseum`}</MuseumNameSmall>
         </>
       )}
       {!homeHeader && (
         <>
-          <MainTitle>Das Geschenk</MainTitle>
+          <MainTitle>Dein Geschenk</MainTitle>
           <MuseumName>{`im Badischen Landesmuseum`}</MuseumName>
         </>
       )}

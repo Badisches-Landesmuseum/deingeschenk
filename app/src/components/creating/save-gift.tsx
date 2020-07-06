@@ -137,8 +137,8 @@ interface SavingFailedProps {
 }
 const SavingFailed: React.FC<SavingFailedProps> = ({ text, buttonText, onClick }) => (
   <Panel>
-    <PanelTitle>Stelle dein Geschenk fertig</PanelTitle>
-    <PanelSubTitle>Hochladen gescheitert</PanelSubTitle>
+    <PanelTitle>Dein Geschenk fertigstellen</PanelTitle>
+    <PanelSubTitle>Hochladen fehlgeschlagen</PanelSubTitle>
     <PanelContent>
       <PanelPrompt background='transparent-black' text={text} />
     </PanelContent>
