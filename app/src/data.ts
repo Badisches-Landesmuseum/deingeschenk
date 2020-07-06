@@ -162,9 +162,9 @@ const blm: Museum = {
   id: uuidv5('https://landesmuseum.de', uuidv5.URL),
   slug: 'blm',
   name: 'Badisches Landesmuseum',
-  curatedGiftId: uuidv5('https://api.thegift.app/gift/mpu-1', uuidv5.URL), // TODO
+  curatedGiftId: uuidv5('https://landesmuseum.de/gift/gift1', uuidv5.URL), // TODO
   promoLink: '/promo', // TODO
-  promoDestination: `/gift/${uuidv5('https://api.thegift.app/gift/mpu-1', uuidv5.URL)}`, // TODO
+  promoDestination: `/gift/${uuidv5('https://landesmuseum.de/gift/gift1', uuidv5.URL)}`, // TODO
   feedbackUrl: 'https://www.surveymonkey.co.uk/r/belgrade-gift', // TODO
   homeScreenStartPoint: 'ever-made-a-mixtape', // TODO
   homeScreenShowCuratedGift: true,
