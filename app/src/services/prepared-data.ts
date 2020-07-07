@@ -73,12 +73,12 @@ preparedGifts.set(uuidv5('https://api.thegift.app/gift/munch-museum-1', uuidv5.U
 
 
 /**
- * The Museum of Applied Art curated Gift
+ * Badisches Landesmuseum curated gift
  *
- * ID: bb61f6c8-119b-5078-9152-453429f3e036
+ * ID: 13b929c4-d4ff-508f-a995-3d25744ee5fd
  */
-preparedGifts.set(uuidv5('https://api.thegift.app/gift/mpu-1', uuidv5.URL), {
-  id: uuidv5('https://api.thegift.app/gift/mpu-1', uuidv5.URL),
+ preparedGifts.set(uuidv5('https://landesmuseum.de/gift/gift1', uuidv5.URL), {
+  id: uuidv5('https://landesmuseum.de/gift/gift1', uuidv5.URL),
   kind: 'MuseumGift',
   museumId: uuidv5('https://landesmuseum.de', uuidv5.URL),
   senderName: 'Badisches Landesmuseum',
@@ -87,17 +87,17 @@ preparedGifts.set(uuidv5('https://api.thegift.app/gift/mpu-1', uuidv5.URL), {
     {
       photo: 'https://dasgeschenk.s3.eu-central-1.amazonaws.com/Museumsgeschenk/Objekt+1.jpg',
       note: 'https://dasgeschenk.s3.eu-central-1.amazonaws.com/Museumsgeschenk/Objekt+1.mp3',
-      clue: 'Search for a large wooden ceiling in the exhibition room No. 1 on second floor',
+      clue: 'Finde die Säule im Raum der antiken Vasen.',
     },
     {
       photo: 'https://dasgeschenk.s3.eu-central-1.amazonaws.com/Museumsgeschenk/Objekt+2.jpg',
       note: 'https://dasgeschenk.s3.eu-central-1.amazonaws.com/Museumsgeschenk/Objekt+2.mp3',
-      clue: 'Look inside the built in glass case in the exhibition room No. 4 on second floor',
+      clue: 'Kehre der Demokratie den Rücken zu und suche hinter dem Ohr des weißen Sokrates.',
     },
     {
       photo: 'https://dasgeschenk.s3.eu-central-1.amazonaws.com/Museumsgeschenk/Objekt+3.jpeg',
       note: 'https://dasgeschenk.s3.eu-central-1.amazonaws.com/Museumsgeschenk/Objekt+3.mp3',
-      clue: 'Find this on a mannequin in the exhibition room No. 5 on second floor',
+      clue: 'Bleibe hier und finde die Wandvitrine mit vielen kleinen Kannen.',
     },
   ],
 });
