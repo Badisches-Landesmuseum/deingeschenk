@@ -86,8 +86,6 @@ const LineSpacer = styled.div`
 
 const ReadMoreLink = styled.button`
   margin: 2% 0 0;
-  font-style: italic;
-  color: ${global.colour.darkGrey};
   font-family: ${global.fonts.title.family};
   font-weight: ${global.fonts.title.normal};
 `;
@@ -97,7 +95,7 @@ const SectionTitle = styled(PanelTitle)`
 `;
 
 const FeedbackSection = styled.div`
-  margin: 5vh 0 15vh;
+  margin: 7vh 0 7vh;
 `;
 
 /**
@@ -192,7 +190,7 @@ const HomeGifts: React.FC<HomeGiftProps> = ({ museumName, curatedGiftId }) => {
 
         <FeedbackSection>
           <ReadMoreLink>
-            <TextResize textSize={42}>
+            <TextResize textSize={50}>
               <a href={museum.feedbackUrl} target='_blank'>Hast du Feedback?</a>
             </TextResize>
           </ReadMoreLink>
