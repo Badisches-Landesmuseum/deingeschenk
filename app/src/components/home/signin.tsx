@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Panel, PanelContent } from '../panel';
 import { PanelButtons } from '../panel-buttons';
 import { Button } from '../buttons';
-import { BackgroundSvg } from '../background-svg';
+import { BackgroundSvgNoLogo } from '../background-svg-no-logo';
 import { TextInput } from '../inputs/text-input';
 import { TextResize } from '../text-resize';
 import { PanelTitle } from '../panel-title';
@@ -53,7 +53,7 @@ const SignIn: React.FC<Props> = ({ onCloseButtonClick }) => {
   return (
 
     <Outer>
-      <BackgroundSvg />
+      <BackgroundSvgNoLogo />
 
       <HeaderCloseButton onClick={onCloseButtonClick} />
 

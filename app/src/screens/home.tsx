@@ -17,6 +17,7 @@ import { HomeGifts } from '../components/home/home-gifts';
 import { FeedbackModal } from '../components/modals/feedback-modal';
 
 import { BackgroundSvg } from '../components/background-svg';
+import { BackgroundSvgNoLogo } from '../components/background-svg-no-logo';
 import {
     getHasSeenHomeIntro,
     setHasSeenHomeIntro,
@@ -178,6 +179,8 @@ export const HomeScreen: React.FC = () => {
   const homeHeader = status === 'show-gifts';
   const allowScroll = status === 'show-gifts';
 
+  const showLogo = status !== 'show-gifts';
+
   function handleTermsAccepted() {
     events.track(termsAcceptedEvent());
     setTermsAccepted(true);
@@ -191,7 +194,12 @@ export const HomeScreen: React.FC = () => {
 
   return (
     <ScreenManager allowScroll={allowScroll}>
-      <BackgroundSvg />
+      {!showLogo && (
+        <BackgroundSvgNoLogo />
+      )}
+      {showLogo && (
+        <BackgroundSvg />
+      )}
       <GlobalStyles />
 
       {/* Header */}
