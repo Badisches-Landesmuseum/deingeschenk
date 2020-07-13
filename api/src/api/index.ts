@@ -7,6 +7,7 @@ import { router } from './routes';
 export interface Config {
   lib: Lib;
   corsAllowedOrigins: string;
+  useAPIPrefix: boolean;
 }
 
 
@@ -54,6 +55,9 @@ class Api extends JsonApi<Api.StateT, Api.CustomT> {
       maxAge: 60 * 60 * 24,
     }));
 
+    if(config.useAPIPrefix) {
+      router.prefix('/api');
+    }
     // Attach our routes
     this.use(router.routes());
     this.use(router.allowedMethods());
