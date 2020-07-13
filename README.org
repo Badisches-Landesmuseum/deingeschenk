@@ -40,6 +40,252 @@
     - FFmpeg 3.4+
       (to convert user-generated media assets to a common format)
 
+
+*** AWS S3 Bucket Setup
+**** Bucket Permissions
+
+     The bucket should be set to allow some public access (by ACL).  To set these go to:
+
+     ~S3 > your-bucket > permissions > Block public access~
+
+     The following restrictions should NOT be turned on:
+
+     - [OFF] Block all public access
+     - [OFF] Block public access to buckets and objects granted through new access control lists (ACLs)
+     - [OFF] Block public access to buckets and objects granted through any access control lists (ACLs)
+
+     See the following screenshot for appropriate settings:
+
+     [[file:docs/gift-bucket-permissions.png][Bucket Public Access]]
+
+**** CORS Setup
+
+      In order for the app to upload and retrieve media from the bucket, it must
+      have an appropriate CORS config.
+
+      To set this go to:
+
+      ~S3 > your-bucket > permissions > CORS configuration~
+
+      And add the following:
+
+      #+begin_src xml
+        <?xml version="1.0" encoding="UTF-8"?>
+        <CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+        <CORSRule>
+            <AllowedOrigin>*</AllowedOrigin>
+            <AllowedMethod>GET</AllowedMethod>
+            <AllowedMethod>POST</AllowedMethod>
+        </CORSRule>
+        </CORSConfiguration>
+      #+end_src
+
+**** Access Token (AWS IAM credentials)
+
+       The API needs to be provided with valid AWS credentials to allow it use the
+       S3 bucket. These are passed to the api in the environment / config variables
+       =AWS_ACCESS_KEY= and =AWS_SECRET_ACCESS_KEY=
+
+       The credentials you provide will need to be attached to a user / role with
+       the following policy:
+
+       #+begin_src json
+         {
+             "Version": "2012-10-17",
+             "Statement": [
+                 {
+                     "Sid": "VisualEditor0",
+                     "Effect": "Allow",
+                     "Action": [
+                         "s3:PutObject",
+                         "s3:GetObjectAcl",
+                         "s3:GetObject",
+                         "s3:AbortMultipartUpload",
+                         "s3:PutObjectVersionAcl",
+                         "s3:GetObjectTagging",
+                         "s3:PutObjectAcl"
+                     ],
+                     "Resource": "arn:aws:s3:::my-gift-bucket/*"
+                 }
+             ]
+         }
+       #+end_src
+
+       Note, =my-gift-bucket= should be the name of the bucket you created at the
+       beginning. If you would like to limit the access further by environment, you
+       can restrict the resource field to e.g.
+       ="Resource": "arn:aws:s3:::my-gift-bucket/production/*"= instead.
+
+**** Avoiding AWS
+
+        If you'd rather avoid AWS S3 completely. You could try something like [[https://min.io/][MinIO]]
+        which provides a compatibility with S3 (though this is entirely untested).
+        Or you could create an alternative [[file:api/src/lib/services/storage.ts][StorageService]] which, for example uses
+        the local filesystem instead.
+
+*** PostgreSQL Database Setup
+    First, enter psql:
+    #+BEGIN_SRC bash
+      sudo su - postgres
+      psql
+    #+END_SRC
+    Now, there are three things we need to do.
+**** Create a database
+     Create the database and make sure it shows up in the list of all databases.
+     #+BEGIN_SRC bash
+       create database gift;
+       \l
+     #+END_SRC
+**** Create a user
+     Create the user, make sure the user shows up in the list of all users, then set the user's password.
+     #+BEGIN_SRC bash
+       create user gift;
+       \du
+       \password gift;
+     #+END_SRC
+**** Grant database privileges to user
+     Transfer ownership to our new user and grant them all privileges
+     #+BEGIN_SRC bash
+       grant all privileges on database gift to gift;
+       alter database gift owner to gift;
+     #+END_SRC
+*** Nginx Setup
+    If you want to run both the app and the API on the same server, you're going to need to use Nginx. Here's an example config:
+    #+BEGIN_SRC
+user www-data;
+worker_processes auto;
+pid /run/nginx.pid;
+include /etc/nginx/modules-enabled/*.conf;
+
+events {
+	worker_connections 768;
+	# multi_accept on;
+}
+
+http {
+
+	##
+	# Basic Settings
+	##
+
+	sendfile on;
+	tcp_nopush on;
+	tcp_nodelay on;
+	keepalive_timeout 65;
+	types_hash_max_size 2048;
+	# server_tokens off;
+
+	# server_names_hash_bucket_size 64;
+	# server_name_in_redirect off;
+
+	include /etc/nginx/mime.types;
+	default_type application/octet-stream;
+
+	##
+	# SSL Settings
+	##
+
+	ssl_protocols TLSv1 TLSv1.1 TLSv1.2; # Dropping SSLv3, ref: POODLE
+	ssl_prefer_server_ciphers on;
+
+	##
+	# Logging Settings
+	##
+
+	access_log /var/log/nginx/access.log;
+	error_log /var/log/nginx/error.log;
+
+	##
+	# Gzip Settings
+	##
+
+	gzip on;
+
+	# gzip_vary on;
+	# gzip_proxied any;
+	# gzip_comp_level 6;
+	# gzip_buffers 16 8k;
+	# gzip_http_version 1.1;
+	# gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
+
+	##
+	# Virtual Host Configs
+	##
+
+	include /etc/nginx/conf.d/*.conf;
+	include /etc/nginx/sites-enabled/*;
+	server {
+		listen 80;
+		listen [::]:80;
+		server_name testgeschenk.de; # TODO : Change me!
+		return 301 https://$server_name$request_uri;
+	}
+	server {
+		listen 443 ssl;
+		listen [::]:443 ssl;
+		server_name testgeschenk.de; # TODO: Change me!
+		ssl_certificate /etc/nginx/ssl/nginx.cer; # TODO: Make sure you add your own cert file here!
+		ssl_certificate_key /etc/nginx/ssl/nginx.key; # TODO: Make sure you add your own key file here!
+		ssl_protocols       TLSv1 TLSv1.1 TLSv1.2;
+		ssl_ciphers         HIGH:!aNULL:!MD5;
+		location / {
+			proxy_pass https://127.0.0.1:8000;
+		}
+		location /api {
+			proxy_pass http://127.0.0.1:5000; # TODO: Make sure you're using the API port here.
+		}
+	}
+}
+    #+END_SRC
+    Do the TODO's in the config, then save the file at =/etc/nginx/nginx.conf= and run nginx.
+
+
+*** Deployment
+    1. Install all the [[Requirements]]
+       - Double-check that you're using NodeJS version 12
+       - Follow the steps in [[AWS S3 Bucket Setup]]
+       - Follow the steps in [[PostgreSQL Database Setup]]
+    2. Install dependencies
+       #+BEGIN_SRC bash
+         cd api
+         yarn install
+         cd ../app
+         yarn install
+       #+END_SRC
+    3. Configure the API environment variables
+       #+BEGIN_SRC
+         cd api
+         cp example.env .env
+         vim .env
+       #+END_SRC
+       - Change the four AWS variables at the bottom to match the values for your bucket
+       - Change the SQL URI to match that of your user + database combination (format =postgresql://user:password@ip:port/dbname=)
+         - Using the port =5432= should work by default
+       - Changing =ENVIRONMENT= is probably recommended, but leaving it as =development= works fine.
+    4. Follow the steps in [[Nginx Setup]]
+    5. Configure the app environment variables
+       #+BEGIN_SRC
+         cd app
+         vim .env.development
+       #+END_SRC
+       Change the api url to =https://yourdomain/api=
+    6. Run the API and the app
+       - I recommend using the process manager pm2
+         - Install with =npm install pm2 -g=
+       - Start the API
+         #+BEGIN_SRC
+           cd api
+           pm2 start yarn --name "api" -- start
+         #+END_SRC
+       - Start the app
+         #+BEGIN_SRC
+           cd app
+           pm2 start yarn --name "app" -- start-app
+         #+END_SRC
+       - Some handy pm2 commands: =pm2 list=, =pm2 logs=, =pm2 monit=
+    7. You're done!
+       - Check that everything is running on your domain
+       - If something isn't working, let us know. Perhaps we missed a step in this manual.
 *** Running locally
 
     API:
