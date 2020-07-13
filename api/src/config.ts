@@ -51,6 +51,8 @@ export interface Config {
   awsSecretAccessKey: string;
   awsBucket: string;
   awsRegion: string;
+
+  useAPIPrefix: boolean;
 }
 
 
@@ -67,6 +69,8 @@ export const config: Config = {
   awsSecretAccessKey: readAsString('AWS_SECRET_ACCESS_KEY'),
   awsBucket: readAsString('AWS_BUCKET'),
   awsRegion: readAsString('AWS_REGION'),
+
+  useAPIPrefix: readAsBool('USE_API_PREFIX'),
 };
 
 // =====================================================================
@@ -81,12 +85,12 @@ function readAsString(name: string): string {
   return readOrThrow(name);
 }
 
-// function readAsBool(name: string): boolean {
-//   const val = readOrThrow(name).toLowerCase();
-//   if (val === 'true') return true;
-//   if (val === 'false') return false;
-//   throw new ConfigError(`Invalid value: ${name}`);
-// }
+function readAsBool(name: string): boolean {
+   const val = readOrThrow(name).toLowerCase();
+   if (val === 'true') return true;
+   if (val === 'false') return false;
+   throw new ConfigError(`Invalid value: ${name}`);
+}
 
 function readAsInt(name: string): number {
   return parseInt(readOrThrow(name), 10);
