@@ -262,6 +262,7 @@ http {
        - Change the SQL URI to match that of your user + database combination (format =postgresql://user:password@ip:port/dbname=)
          - Using the port =5432= should work by default
        - Changing =ENVIRONMENT= is probably recommended, but leaving it as =development= works fine.
+       - Set =USE_API_PREFIX= to =true=. This will add =/api= as a prefix to all API routes.
     4. Follow the steps in [[Nginx Setup]]
     5. Configure the app environment variables
        #+BEGIN_SRC
