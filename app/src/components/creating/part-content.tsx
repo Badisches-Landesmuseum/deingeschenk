@@ -296,9 +296,7 @@ export const CreatingPartContent: React.FC<Props> = ({ recipientName, gift, onCo
           )}
         </PanelContent>
         <PanelButtons>
-          {firstAudioHasPlayed && (
             <Button onClick={() => {setStatus('take-photo'); }} primary={true}>Weiter</Button>
-          )}
         </PanelButtons>
       </>
     );
@@ -418,9 +416,7 @@ export const CreatingPartContent: React.FC<Props> = ({ recipientName, gift, onCo
         </PanelContent>
         <PanelButtons>
           {/* {secondAudioHasPlayed && <Button onClick={() => {setStatus('record-message'); }}>Skip</Button>} */}
-          {secondAudioHasPlayed && (
             <Button onClick={() => {setStatus('record-message'); }} primary={true}>Aufnahme beginnen</Button>
-          )}
         </PanelButtons>
       </>
     );
@@ -435,7 +431,7 @@ export const CreatingPartContent: React.FC<Props> = ({ recipientName, gift, onCo
 
     return (
       <CreateGiftRecordAndPlayback
-        playbackMessage={'Möchtest du deine Nachricht noch einmal anhören?'}
+        playbackMessage={'Höre deine Nachricht noch einmal an!'}
         gift={gift}
         giftPartIndex={giftPartIndex}
         text={text}
@@ -492,7 +488,7 @@ export const CreatingPartContent: React.FC<Props> = ({ recipientName, gift, onCo
   function renderPreClueMessage2() {
 
     const text = (giftPartIndex === 0)
-      ? `Beschreibe deine Umgebung oder einen Anhaltspunkt für Nachfragen bei den Aufsichten.`
+      ? `Beschreibe deine Umgebung oder einen Anhaltspunkt um das Objekt zu finden.`
       : `Schreibe jetzt einen Hinweis, wo ${recipientName} das Objekt finden kann`;
 
     const next = () => { setShowingEnterClue(true); };

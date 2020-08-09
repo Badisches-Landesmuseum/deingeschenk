@@ -263,10 +263,10 @@ const ReceivingPartContent: React.FC<PartContentProps> = (props) => {
 
         return (
           <>
-            {audioPlaybackComplete && furtherPart && (
+            {furtherPart && (
               <Button onClick={gotoEndOfGiftPart} primary={true}>{openPartText}</Button>
             )}
-            {audioPlaybackComplete && !furtherPart && (
+            {!furtherPart && (
               <Button onClick={gotoEndOfGiftPart} primary={true}>Fertig</Button>
             )}
           </>
@@ -335,9 +335,9 @@ const ReceivingPartContent: React.FC<PartContentProps> = (props) => {
       case 0 :
         return 'Kommst du nicht weiter? Frage mal jemanden vom Museum.';
       case 1 :
-        return 'Oje! Vielleicht kann dir eine Aufsicht helfen?';
+        return 'Oje! Vielleicht kann dir jemand vom Museum helfen?';
       case 2 :
-        return 'Endspurt! Frage jemanden im Museum.';
+        return 'Endspurt! Frage jemanden vom Museum.';
       default :
         return '';
     }

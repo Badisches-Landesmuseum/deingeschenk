@@ -15,6 +15,7 @@ import { PanelTitle } from '../panel-title';
 import { TextResize } from '../text-resize';
 import SvgAddCircle from '../svg/add-circle';
 import SvgGift from '../svg/gift';
+import SvgFeedback from '../svg/feedback';
 
 
 /**
@@ -40,6 +41,10 @@ const OpenMuseumGiftSvg = styled.div`
   margin: 15% auto 1%;
   width: 30%;
 `;
+const FeedbackSvg = styled.div`
+  margin: 15% auto 1%;
+  width: 75%;
+`;
 const OpenYourGift = styled.div`
   line-height: 1.3;
   margin-bottom: 18%;
@@ -47,6 +52,10 @@ const OpenYourGift = styled.div`
 const OpenYourGiftText = styled(TextResize)`
   margin: 0 auto;
   max-width: 70%;
+`;
+const FeedbackText = styled(TextResize)`
+  margin: 0 auto;
+  font-family: 'open-sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 `;
 
 
@@ -157,12 +166,12 @@ const HomeGifts: React.FC<HomeGiftProps> = ({ museumName, curatedGiftId }) => {
             onClick={() => events.track(hGiftsCreatePressedEvent())}
             to='/create-gift'
           >
-            <CreateAGiftOfYourOwn textSize={42}>
-              Stelle ein eigenes Geschenk zusammen
-            </CreateAGiftOfYourOwn>
             <PlusStyle>
               <SvgAddCircle />
             </PlusStyle>
+            <CreateAGiftOfYourOwn textSize={42}>
+              Stelle ein eigenes Geschenk zusammen
+            </CreateAGiftOfYourOwn>
           </Link>
         </GiftsNotSent>
 
@@ -190,9 +199,12 @@ const HomeGifts: React.FC<HomeGiftProps> = ({ museumName, curatedGiftId }) => {
 
         <FeedbackSection>
           <ReadMoreLink>
-            <TextResize textSize={50}>
-              <a href={museum.feedbackUrl} target='_blank'>Hast du Feedback?</a>
-            </TextResize>
+            <a href={museum.feedbackUrl} target="_blank">
+            <FeedbackSvg>
+              <SvgFeedback colour='black' />
+            </FeedbackSvg>
+            <FeedbackText textSize={50}>Hast du Feedback?</FeedbackText>
+            </a>
           </ReadMoreLink>
         </FeedbackSection>
 

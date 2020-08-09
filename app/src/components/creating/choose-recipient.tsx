@@ -48,7 +48,7 @@ export const CreateGiftChooseRecipient: React.FC<Props> = ({ giftId, onComplete 
         <PanelContent>
 
           <AudioPlayer
-            message={'Wen wirst du beschenken?'}
+            message={'Los geht\'s!'}
             src={assetStore.assets.cStart}
             forwardButtonType={'go-to-end'}
             giftId={giftId}
@@ -59,11 +59,9 @@ export const CreateGiftChooseRecipient: React.FC<Props> = ({ giftId, onComplete 
         </PanelContent>
 
         <PanelButtons>
-          {audioHasPlayed && (
             <Button onClick={() => { setShowingEnterRecipient(true); }} primary={true}>
               Gib den Namen ein
             </Button>
-          )}
         </PanelButtons>
 
       </Panel>

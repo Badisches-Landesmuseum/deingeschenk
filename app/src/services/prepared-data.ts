@@ -87,7 +87,7 @@ preparedGifts.set(uuidv5('https://api.thegift.app/gift/munch-museum-1', uuidv5.U
     {
       photo: 'https://dasgeschenk.s3.eu-central-1.amazonaws.com/Museumsgeschenk/Objekt+1.jpg',
       note: 'https://dasgeschenk.s3.eu-central-1.amazonaws.com/Museumsgeschenk/Objekt+1.mp3',
-      clue: 'Finde die Säule im Raum der antiken Vasen.',
+      clue: 'Gehe in die Antikenabteilung. Finde die Säule im Raum der griechischen Vasen.',
     },
     {
       photo: 'https://dasgeschenk.s3.eu-central-1.amazonaws.com/Museumsgeschenk/Objekt+2.jpg',

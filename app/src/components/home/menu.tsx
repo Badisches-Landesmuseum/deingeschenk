@@ -119,6 +119,7 @@ const MenuStyle = styled.div`
 
 interface MenuProps {
   openPrivacy: () => void; // Callback to open privacy
+  openImprint: () => void; // Callback to open privacy
   openHelp: () => void; // Callback to open help
   onCloseClick: () => void; // Callback when the close button is clicked
 }
@@ -151,6 +152,7 @@ const Menu: React.FC<MenuProps> = (props) => {
         <MenuItem><Link onClick={handleCloseClick} to='/'>Start</Link></MenuItem>
         <MenuItem onClick={props.openHelp}>Hilfe</MenuItem>
         <MenuItem onClick={props.openPrivacy}>Datenschutz</MenuItem>
+        <MenuItem onClick={props.openImprint}>Impressum</MenuItem>
         <MenuItem><a href={museum.feedbackUrl} target='_blank'>Feedback</a></MenuItem>
         <CloseMenuItem onClick={handleCloseClick} aria-label='close menu'><CloseArrowUp /></CloseMenuItem>
       </MenuStyle>

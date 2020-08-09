@@ -15,6 +15,7 @@ import { HeaderCloseButton } from './home/header-close-button';
 import { TermsModal } from './modals/terms-modal';
 import { HelpContent } from './information/help';
 import { TermsContent } from './information/terms';
+import { ImprintContent } from './information/imprint';
 
 /**
  * Global screen header
@@ -125,6 +126,7 @@ const ScreenHeader: React.FC<Props> = (props: Props) => {
   // State
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [privacyIsOpen, setPrivacyIsOpen] = useState(false);
+  const [imprintIsOpen, setImprintIsOpen] = useState(false);
   const [helpIsOpen, setHelpIsOpen] = useState(false);
   const [termsModalIsOpen, setTermsModalIsOpen] = useState(!getUserHasAgreedTerms());
 
@@ -163,6 +165,7 @@ const ScreenHeader: React.FC<Props> = (props: Props) => {
       {isMenuOpen && (
         <Menu
           openPrivacy={() => { setPrivacyIsOpen(true); }}
+          openImprint={() => { setImprintIsOpen(true); }}
           openHelp={() => { setHelpIsOpen(true); }}
           onCloseClick={() => { setIsMenuOpen(false); }}
         />
@@ -209,6 +212,15 @@ const ScreenHeader: React.FC<Props> = (props: Props) => {
         onClose={() => { setPrivacyIsOpen(false); }}
       >
         <TermsContent />
+      </InformationWindow>
+    )}
+
+    {/* == Imprint == */}
+    {imprintIsOpen && (
+      <InformationWindow
+        onClose={() => { setImprintIsOpen(false); }}
+      >
+        <ImprintContent />
       </InformationWindow>
     )}
 

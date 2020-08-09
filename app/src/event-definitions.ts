@@ -25,6 +25,8 @@ export const termsAcceptedEvent = () => ({ name: 'terms-accepted' });
 
 export const pTermsPrivacyOpenedEvent = () => ({ name: 'p-terms-privacy-opened' });
 export const pTermsPrivacyClosedEvent = () => ({ name: 'p-terms-privacy-closed' });
+export const pImprintOpenedEvent = () => ({ name: 'p-imprint-opened' });
+export const pImprintClosedEvent = () => ({ name: 'p-imprint-closed' });
 export const pHelpOpenedEvent = () => ({ name: 'p-help-opened' });
 export const pHelpClosedEvent = () => ({ name: 'p-help-closed' });
 
