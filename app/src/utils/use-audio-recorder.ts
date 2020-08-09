@@ -80,6 +80,9 @@ export const useAudioRecorder: () => AudioRecorder = () => {
 
             recorder.addEventListener('start', () => {
               setState({ kind: 'recording', recorder });
+              setTimeout(() => {
+                recorder.stop();
+              }, 10 * 60 * 1000);  // Quit recording automatically after 10 minutes
             });
 
             // Handle recording ready
