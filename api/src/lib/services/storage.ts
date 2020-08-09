@@ -52,6 +52,7 @@ interface StorageServiceConfig {
   awsAccessKey: string;
   awsSecretAccessKey: string;
   awsBucket: string;
+  bucketEndpoint: string;
   awsRegion: string;
   prefix: string;
 }
@@ -71,14 +72,15 @@ export class StorageService {
     this.bus = config.bus;
 
     this.s3 = new S3({
-      credentials: {
-        accessKeyId: config.awsAccessKey,
-        secretAccessKey: config.awsSecretAccessKey,
-      },
+      accessKeyId: config.awsAccessKey,
+      secretAccessKey: config.awsSecretAccessKey,
       params: {
         Bucket: config.awsBucket,
       },
+      endpoint: config.bucketEndpoint,
       region: config.awsRegion,
+      s3ForcePathStyle: true,
+      signatureVersion: 'v4'
     });
 
     this.bucket = config.awsBucket;
@@ -106,7 +108,7 @@ export class StorageService {
       Fields: {
         'Key': this.generateUploadKey(fileName),
         'ACL': 'private',
-        'ServerSideEncryption': 'AES256',
+        //'ServerSideEncryption': 'AES256',
         'Content-Type': mimeType,
       },
       Expires: 60 * 60 * 24,
@@ -149,7 +151,6 @@ export class StorageService {
     }
   }
 
-
   /**
    * Upload a file to our asset-storage.
    *
@@ -175,7 +176,7 @@ export class StorageService {
       ACL: 'public-read',
       ContentType: mimeType,
       CacheControl: PUBLIC_CACHING,
-      ServerSideEncryption: 'AES256',
+      //ServerSideEncryption: 'AES256',
     });
     const sendData = await managedUpload.promise();
     return sendData.Location;

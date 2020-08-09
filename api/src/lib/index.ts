@@ -12,6 +12,7 @@ export interface Config {
   awsAccessKey: string;
   awsSecretAccessKey: string;
   awsBucket: string;
+  bucketEndpoint: string;
   awsRegion: string;
 }
 
@@ -57,6 +58,7 @@ export class Lib {
       awsSecretAccessKey: config.awsSecretAccessKey,
       awsBucket: config.awsBucket,
       awsRegion: config.awsRegion,
+      bucketEndpoint: config.bucketEndpoint,
       prefix: config.environment,
     });
 

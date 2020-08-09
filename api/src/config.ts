@@ -50,6 +50,7 @@ export interface Config {
   awsAccessKey: string;
   awsSecretAccessKey: string;
   awsBucket: string;
+  bucketEndpoint: string;
   awsRegion: string;
 
   useAPIPrefix: boolean;
@@ -68,6 +69,7 @@ export const config: Config = {
   awsAccessKey: readAsString('AWS_ACCESS_KEY'),
   awsSecretAccessKey: readAsString('AWS_SECRET_ACCESS_KEY'),
   awsBucket: readAsString('AWS_BUCKET'),
+  bucketEndpoint: readAsString('BUCKET_ENDPOINT'),
   awsRegion: readAsString('AWS_REGION'),
 
   useAPIPrefix: readAsBool('USE_API_PREFIX'),
