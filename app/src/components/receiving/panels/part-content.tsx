@@ -263,10 +263,10 @@ const ReceivingPartContent: React.FC<PartContentProps> = (props) => {
 
         return (
           <>
-            {furtherPart && (
+            {audioPlaybackComplete && furtherPart && (
               <Button onClick={gotoEndOfGiftPart} primary={true}>{openPartText}</Button>
             )}
-            {!furtherPart && (
+            {audioPlaybackComplete && !furtherPart && (
               <Button onClick={gotoEndOfGiftPart} primary={true}>Fertig</Button>
             )}
           </>

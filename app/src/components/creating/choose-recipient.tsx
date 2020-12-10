@@ -59,9 +59,11 @@ export const CreateGiftChooseRecipient: React.FC<Props> = ({ giftId, onComplete 
         </PanelContent>
 
         <PanelButtons>
+          {audioHasPlayed && (
             <Button onClick={() => { setShowingEnterRecipient(true); }} primary={true}>
               Gib den Namen ein
             </Button>
+          )}
         </PanelButtons>
 
       </Panel>

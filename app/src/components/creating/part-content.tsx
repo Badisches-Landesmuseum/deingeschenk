@@ -296,7 +296,9 @@ export const CreatingPartContent: React.FC<Props> = ({ recipientName, gift, onCo
           )}
         </PanelContent>
         <PanelButtons>
+          {firstAudioHasPlayed && (
             <Button onClick={() => {setStatus('take-photo'); }} primary={true}>Weiter</Button>
+          )}
         </PanelButtons>
       </>
     );
@@ -416,7 +418,9 @@ export const CreatingPartContent: React.FC<Props> = ({ recipientName, gift, onCo
         </PanelContent>
         <PanelButtons>
           {/* {secondAudioHasPlayed && <Button onClick={() => {setStatus('record-message'); }}>Skip</Button>} */}
+          {secondAudioHasPlayed && (
             <Button onClick={() => {setStatus('record-message'); }} primary={true}>Aufnahme beginnen</Button>
+          )}
         </PanelButtons>
       </>
     );
