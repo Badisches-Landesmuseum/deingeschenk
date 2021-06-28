@@ -1,6 +1,6 @@
-* GIFT
+* Dein Geschenk
 
-  This repository contains source code for the GIFT App.
+  This repository contains the source code of the 'Dein Geschenk' App used at the Baden State Museum: https://www.landesmuseum.de/deingeschenk.
 
 ** Info
 
@@ -14,6 +14,8 @@
 
   - [[https://gifting.digital/][The GIFT project]]
   - [[https://www.blasttheory.co.uk/projects/gift/][The GIFT App]]
+  
+  The application was adapted and developed further for the Baden State Museum by the project team Creative Collections consisting of Johannes Bernhardt, Tilmann Bruhn and Christiane Lindner, as well as the extended Creative-family Leilah Jätzold, Danica Schlosser and Tim Weiland. For further information refer to www.landesmuseum.de/creative. 
 
 ** Getting Started
 
