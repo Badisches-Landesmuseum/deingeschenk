@@ -100,7 +100,7 @@ preparedGifts.set(uuidv5("https://landesmuseum.de/gift/gift1", uuidv5.URL), {
       photo:
         "https://storage.geschenk.landesmuseum.de/gift/production/museum-gift/img_1.jpg",
       note: "https://storage.geschenk.landesmuseum.de/gift/production/museum-gift/audio_1.mp3",
-      clue: "Suche nach dem größten Objekt im hinteren Teil des ersten Raumes. Beim Betreten dieser Ausstellung läufst du direkt drauf zu.",
+      clue: "Gehe in die Ausstellung „Göttinnen des Jugendstils“. Suche nach dem größten Objekt im hinteren Teil des ersten Raumes.",
     },
     {
       photo:
